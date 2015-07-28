@@ -3,8 +3,10 @@ package com.twu.biblioteca;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -32,5 +34,19 @@ public class ViewTest {
         view.displayWelcomeMessage();
 
         assertEquals("***** Welcome To Biblioteca *****\n", outContent.toString());
+    }
+
+    @Test
+    public void canDisplayListOfBooks() {
+        View view = new View();
+        Book b1 = new Book("book1");
+        Book b2 = new Book("book2");
+
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(b1);
+        books.add(b2);
+        Library library = new Library(books);
+
+
     }
 }

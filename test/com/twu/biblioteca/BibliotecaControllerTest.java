@@ -19,4 +19,16 @@ public class BibliotecaControllerTest {
 
         verify(view).displayWelcomeMessage();
     }
+
+    @Test
+    public void canDisplayMainMenu() {
+        View view = mock(View.class);
+        Library books =mock(Library.class);
+        BibliotecaController bibliotecaController = new BibliotecaController(view, books, new ArrayList<String>());
+
+        bibliotecaController.run();
+
+        verify(view).displayOutput("##### MAIN MENU #####");
+        verify(view).displayOutput("1. show list of books");
+    }
 }

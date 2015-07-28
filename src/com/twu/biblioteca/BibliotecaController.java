@@ -27,4 +27,8 @@ public class BibliotecaController {
         }
     }
 
+    public void run() {
+            view.displayOutput("##### MAIN MENU #####");
+            view.displayOutput("1. show list of books");
+    }
 }

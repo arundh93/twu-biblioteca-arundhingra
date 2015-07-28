@@ -39,8 +39,8 @@ public class ViewTest {
     @Test
     public void canDisplayListOfBooks() {
         View view = new View();
-        Book b1 = new Book("book1");
-        Book b2 = new Book("book2");
+        Book b1 = new Book("book1", "Jeffery Archer", 2011);
+        Book b2 = new Book("book2", "Jeffery Archer", 2009);
 
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(b1);

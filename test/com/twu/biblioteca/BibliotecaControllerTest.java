@@ -14,7 +14,8 @@ public class BibliotecaControllerTest {
     @Test
     public void canDisplayWelcomeMessage() {
         View view = mock(View.class);
-        BibliotecaController bibliotecaController = new BibliotecaController(view);
+        Library books =mock(Library.class);
+        BibliotecaController bibliotecaController = new BibliotecaController(view, books, new ArrayList<String>());
 
         bibliotecaController.start();
 
@@ -24,8 +25,8 @@ public class BibliotecaControllerTest {
     @Test
     public void canConvertBookDetailsToString() {
         View view = Mockito.mock(View.class);
-        BibliotecaController bibliotecaController = new BibliotecaController(view);
         Library books = Mockito.mock(Library.class);
+        BibliotecaController bibliotecaController = new BibliotecaController(view, books, new ArrayList<String>());
         ArrayList<Book> listOfBooks = new ArrayList<Book>();
         listOfBooks.add(new Book("only time will tell"));
         listOfBooks.add(new Book("sins of a father"));

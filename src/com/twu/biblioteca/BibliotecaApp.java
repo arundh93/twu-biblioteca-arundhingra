@@ -1,8 +1,19 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
+
 public class BibliotecaApp {
     public static void main(String[] args) {
         View view = new View();
-        view.displayWelcomeMessage();
+        Book book1 = new Book("only time will tell");
+        Book book2 = new Book("sins of a father");
+        Book book3 = new Book("prodigal daughter");
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
+        Library library = new Library(books);
+        BibliotecaController application = new BibliotecaController(view, library, new ArrayList<String>());
+        application.start();
     }
 }

@@ -29,7 +29,7 @@
 
     <target name ="createjar" depends="runjunit">
         <jar destfile="lib/app.jar"
-             basedir="build"
+             basedir="out"
              excludes="**/Test.class"
                 />
     </target>

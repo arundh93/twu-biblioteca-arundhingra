@@ -1,10 +1,16 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
+
 public class Book {
     private String title;
+    private String author;
+    private int publicationYear;
 
-    public Book(String title) {
+    public Book(String title, String author, int publicationYear) {
         this.title = title;
+        this.author = author;
+        this.publicationYear = publicationYear;
     }
 
     public String getTitle() {
@@ -25,4 +31,15 @@ public class Book {
     public int hashCode() {
         return title != null ? title.hashCode() : 0;
     }
+
+    public void convertBookDetailsToString(ArrayList<String> bookDetails, View view) {
+        bookDetails.add(this.title);
+        bookDetails.add(this.author);
+        bookDetails.add(Integer.toString(this.publicationYear));
+        view.displayOutput(bookDetails.get(0));
+        view.displayOutput(bookDetails.get(1));
+        view.displayOutput(bookDetails.get(2));
+    }
 }
+
+

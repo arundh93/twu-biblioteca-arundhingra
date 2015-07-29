@@ -16,6 +16,8 @@ public class BibliotecaController {
 
     public void start() {
         view.displayWelcomeMessage();
-        view.displayListOfBooks(books);
+        view.displayMenu();
+        if(view.takeInput().equals("1"))
+            view.displayListOfBooks(books);
     }
 }

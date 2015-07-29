@@ -12,7 +12,7 @@ public class View {
     }
 
     public void displayOutput(String output) {
-        System.out.printf(output);
+        System.out.println(output);
     }
 
     public String takeInput() {
@@ -21,10 +21,14 @@ public class View {
     }
 
     public void displayListOfBooks(ArrayList<Book> books) {
-        displayOutput("\n");
         for (Book book : books) {
             System.out.printf("%-25s %-25s %-25s\n", book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear()));
         }
+    }
+
+    public void displayMenu() {
+        displayOutput("Main Menu");
+        displayOutput("1. List Books");
     }
 }
 

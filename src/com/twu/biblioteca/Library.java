@@ -17,4 +17,11 @@ public class Library {
     public int lengthOfList() {
         return books.size();
     }
+
+    public Book getBookFromName(String name) {
+        for (Book book : books)
+            if (book.getTitle().equals(name))
+                return book;
+        return null;
+    }
 }

@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class ParserTest {
 
     @Test
@@ -17,7 +18,7 @@ public class ParserTest {
     @Test
     public void canCreateCheckOutObject() {
         Parser parser = new Parser();
-        String input = "1";
+        String input = "2";
 
         assertEquals(CheckOut.class, parser.parseInput(input).getClass());
     }

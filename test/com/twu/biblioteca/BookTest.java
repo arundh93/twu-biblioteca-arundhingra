@@ -18,18 +18,4 @@ public class BookTest {
 
         assertEquals("Only Time Will Tell", book.getTitle());
     }
-
-    @Test
-    public void canConvertBookDetailsToString() {
-        View view = Mockito.mock(View.class);
-        Book book = new Book("Only time Will Tell", "Jeffery Archer", 2011);
-
-        book.convertBookDetailsToString(new ArrayList<String>(), view);
-
-        verify(view).displayOutput("Only time Will Tell");
-        verify(view).displayOutput("Jeffery Archer");
-        verify(view).displayOutput("2011");
-    }
-
-
 }

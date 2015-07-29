@@ -19,5 +19,7 @@ public class BibliotecaController {
         view.displayMenu();
         if(view.takeInput().equals("1"))
             view.displayListOfBooks(books);
+        else
+            view.displayOutput("Invalid input");
     }
 }

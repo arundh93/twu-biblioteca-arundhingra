@@ -17,6 +17,4 @@ public class Library {
     public int lengthOfList() {
         return books.size();
     }
-
-
 }

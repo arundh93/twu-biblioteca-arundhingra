@@ -17,6 +17,13 @@ public class Book {
         return title;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+    public int getPublicationYear() {
+        return publicationYear;
+    }
+
     @Override
     public boolean equals(Object thatBook) {
         if (this == thatBook) return true;
@@ -32,14 +39,6 @@ public class Book {
         return title != null ? title.hashCode() : 0;
     }
 
-    public void convertBookDetailsToString(ArrayList<String> bookDetails, View view) {
-        bookDetails.add(this.title);
-        bookDetails.add(this.author);
-        bookDetails.add(Integer.toString(this.publicationYear));
-        view.displayOutput(bookDetails.get(0));
-        view.displayOutput(bookDetails.get(1));
-        view.displayOutput(bookDetails.get(2));
-    }
 }
 
 

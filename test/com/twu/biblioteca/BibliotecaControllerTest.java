@@ -18,7 +18,8 @@ public class BibliotecaControllerTest {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(b1);
         books.add(b2);
-        BibliotecaController bibliotecaController = new BibliotecaController(view, books);
+        Library library = new Library(books);
+        BibliotecaController bibliotecaController = new BibliotecaController(view, library);
         Mockito.when(view.takeInput()).thenReturn("1");
         bibliotecaController.start();
 
@@ -33,7 +34,8 @@ public class BibliotecaControllerTest {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(b1);
         books.add(b2);
-        BibliotecaController bibliotecaController = new BibliotecaController(view, books);
+        Library library = new Library(books);
+        BibliotecaController bibliotecaController = new BibliotecaController(view, library);
         Mockito.when(view.takeInput()).thenReturn("1");
         bibliotecaController.start();
 
@@ -48,7 +50,8 @@ public class BibliotecaControllerTest {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(b1);
         books.add(b2);
-        BibliotecaController bibliotecaController = new BibliotecaController(view, books);
+        Library library = new Library(books);
+        BibliotecaController bibliotecaController = new BibliotecaController(view,library);
         Mockito.when(view.takeInput()).thenReturn("2");
         bibliotecaController.start();
 

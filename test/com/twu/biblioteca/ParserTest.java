@@ -11,6 +11,14 @@ public class ParserTest {
         Parser parser = new Parser();
         String input = "1";
 
-        assertEquals(new ListBooks().getClass(), parser.parseInput(input).getClass());
+        assertEquals(ListBooks.class, parser.parseInput(input).getClass());
+    }
+
+    @Test
+    public void canCreateCheckOutObject() {
+        Parser parser = new Parser();
+        String input = "1";
+
+        assertEquals(CheckOut.class, parser.parseInput(input).getClass());
     }
 }

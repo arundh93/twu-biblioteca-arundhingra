@@ -36,4 +36,18 @@ public class LibraryTest {
 
         assertEquals(book1, library.getBookFromName("only time will tell"));
     }
+
+    @Test
+    public void canCheckOutBookFromLibrary() {
+        Book book1 = new Book("only time will tell", "Jeffery Archer", 2000);
+        Book book2 = new Book("sins of a father", "Jeffery Archer", 2000);
+        ArrayList<Book> books1 = new ArrayList<Book>();
+        books1.add(book1);
+        books1.add(book2);
+        Library library = new Library(books1);
+        Book book5 = library.getBookFromName("only time will tell");
+        library.checkOutBook(book1);
+
+        assertEquals(false, book5.isBookInLibrary());
+    }
 }

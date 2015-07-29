@@ -18,6 +18,10 @@ public class Library {
         return books.size();
     }
 
+    public void checkOutBook(Book book) {
+        book.checkOutFromLibrary();
+    }
+
     public Book getBookFromName(String name) {
         for (Book book : books)
             if (book.getTitle().equals(name))

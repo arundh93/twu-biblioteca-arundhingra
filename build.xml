@@ -22,6 +22,8 @@
             <test name="com.twu.biblioteca.BookTest"/>
             <test name="com.twu.biblioteca.LibraryTest"/>
             <test name="com.twu.biblioteca.BibliotecaControllerTest"/>
+            <test name="com.twu.biblioteca.ParserTest"/>
+            <test name="com.twu.biblioteca.ListBooksTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class ParserTest {
 
     @Test
-    public void canCreateListBooksObject() {
+    public void canCreateListBooksCommandObjectWhenInputIsOne() {
         Parser parser = new Parser();
         String input = "1";
 
@@ -16,10 +16,18 @@ public class ParserTest {
     }
 
     @Test
-    public void canCreateCheckOutObject() {
+    public void canCreateCheckOutCommandObjectWhenInputIsTwo() {
         Parser parser = new Parser();
         String input = "2";
 
         assertEquals(CheckOut.class, parser.parseInput(input).getClass());
+    }
+
+    @Test
+    public void canCreateQuitCommandObjectObjectWhenInputIsThree() {
+        Parser parser = new Parser();
+        String input = "3";
+
+        assertEquals(Quit.class, parser.parseInput(input).getClass());
     }
 }

@@ -39,4 +39,13 @@ public class BookTest {
 
         assertEquals(true, book.isBookInLibrary());
     }
+
+    @Test
+    public void canChangeStatusOfBeingCheckOutLibrary() {
+        Book book = new Book("Only Time Will Tell", "Jeffery Archer", 2011);
+
+        book.checkOutFromLibrary();
+
+        assertEquals(false, book.isBookInLibrary());
+    }
 }

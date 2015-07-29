@@ -44,6 +44,10 @@ public class Book {
     public int hashCode() {
         return title != null ? title.hashCode() : 0;
     }
+
+    public void checkOutFromLibrary() {
+        isInLibrary = false;
+    }
 }
 
 

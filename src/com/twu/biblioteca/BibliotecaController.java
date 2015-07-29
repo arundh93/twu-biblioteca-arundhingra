@@ -17,18 +17,22 @@ public class BibliotecaController {
 
     public void start() {
         view.displayWelcomeMessage();
-        this.convertBookListToStringFormat(library, bookDetails);
+        run();
     }
 
     private void convertBookListToStringFormat(Library library, ArrayList<String> bookDetails) {
-        for(int i = 0; i < library.getBooks().size(); i++) {
+        for (int i = 0; i < library.getBooks().size(); i++) {
             bookDetails.clear();
             library.getBooks().get(i).convertBookDetailsToString(bookDetails, view);
         }
     }
 
     public void run() {
-            view.displayOutput("##### MAIN MENU #####");
-            view.displayOutput("1. show list of books");
+        view.displayOutput("##### MAIN MENU #####");
+        view.displayOutput("1. show list of books");
+        String input = view.takeInput();
+        if (Integer.parseInt(input) == 1) {
+            this.convertBookListToStringFormat(library, bookDetails);
+        }
     }
 }

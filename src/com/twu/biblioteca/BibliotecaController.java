@@ -6,12 +6,10 @@ import java.util.ArrayList;
 public class BibliotecaController {
 
     private View view;
-    private ArrayList<String> bookDetails;
     private ArrayList<Book> books;
-    public BibliotecaController(View view, ArrayList<Book> books, ArrayList<String> bookDetails) {
+    public BibliotecaController(View view, ArrayList<Book> books) {
         this.view = view;
         this.books = books;
-        this.bookDetails = bookDetails;
     }
 
     public void start() {
@@ -19,7 +17,9 @@ public class BibliotecaController {
         view.displayMenu();
         if(view.takeInput().equals("1"))
             view.displayListOfBooks(books);
-        else
-            view.displayOutput("Invalid input");
+        else if(view.takeInput().equals("quit"))
+            System.exit(0);
+        else if(view.takeInput().equals("2"))
+            view.displayOutput("Invalid Input");
     }
 }

@@ -13,7 +13,7 @@ public class BibliotecaApp {
         books.add(book1);
         books.add(book2);
         books.add(book3);
-        BibliotecaController application = new BibliotecaController(view, books, new ArrayList<String>());
+        BibliotecaController application = new BibliotecaController(view, books);
         application.start();
     }
 }

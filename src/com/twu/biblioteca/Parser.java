@@ -8,7 +8,8 @@ public class Parser {
             return new CheckOut();
         else if(input.equals("3"))
             return new Quit();
-        else
+        else if(input.equals("4"))
+            return new ReturnBook();
             return null;
     }
 }

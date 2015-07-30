@@ -2,11 +2,12 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
-public class CheckOut implements MenuOperation {
+public class ReturnBook implements MenuOperation{
 
+    @Override
     public ArrayList<Book> execute(Library library, View view) {
-        String bookName = view.takeInput();
-        library.checkOutBook(library.getBookFromName(bookName));
+        String input = view.takeInput();
+        library.returnBook(input);
         return library.getBooks();
     }
 }

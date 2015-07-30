@@ -3,11 +3,7 @@ package com.twu.biblioteca;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
-
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
@@ -40,16 +36,6 @@ public class ViewTest {
     }
 
     @Test
-    public void canTakeInputFromUser() {
-        View view = new View();
-        String input = "1";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        assertEquals("1", view.takeInput());
-    }
-
-    @Test
     public void canDisplayListOfBooks() {
         View view = new View();
         ArrayList<Book> books= new ArrayList<Book>();
@@ -70,6 +56,8 @@ public class ViewTest {
         view.displayMenu();
 
         assertEquals("Main Menu\n" +
-                "1. List Books\n", outContent.toString());
+                "1. List Books\n" +
+                "2. Checkout Book\n" +
+                "3. Quit\n", outContent.toString());
     }
 }

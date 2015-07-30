@@ -14,7 +14,8 @@ public class BibliotecaApp {
         books.add(book2);
         books.add(book3);
         Library library = new Library(books);
-        BibliotecaController application = new BibliotecaController(view, library);
-        application.start();
+        Parser parser = new Parser();
+        BibliotecaController application = new BibliotecaController(view, library, parser);
+        application.start(true);
     }
 }

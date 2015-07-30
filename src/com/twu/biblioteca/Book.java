@@ -48,6 +48,10 @@ public class Book {
     public void checkOutFromLibrary() {
         isInLibrary = false;
     }
+
+    public void returnInLibrary() {
+        isInLibrary = true;
+    }
 }
 
 

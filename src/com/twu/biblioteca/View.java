@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class View {
 
-    private Scanner sc;
+
 
     public void displayWelcomeMessage() {
         displayOutput("***** Welcome To Biblioteca *****");
@@ -16,7 +16,7 @@ public class View {
     }
 
     public String takeInput() {
-        sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         return sc.nextLine();
     }
 
@@ -30,6 +30,8 @@ public class View {
     public void displayMenu() {
         displayOutput("Main Menu");
         displayOutput("1. List Books");
+        displayOutput("2. Checkout Book");
+        displayOutput("3. Quit");
     }
 }
 

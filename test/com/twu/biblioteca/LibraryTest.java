@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import org.junit.Test;
+
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -49,5 +50,20 @@ public class LibraryTest {
         library.checkOutBook(book1);
 
         assertEquals(false, book5.isBookInLibrary());
+    }
+
+    @Test
+    public void canReturnBookToLibrary() {
+        Book book1 = new Book("only time will tell", "Jeffery Archer", 2000);
+        Book book2 = new Book("sins of a father", "Jeffery Archer", 2000);
+        ArrayList<Book> books1 = new ArrayList<Book>();
+        books1.add(book1);
+        books1.add(book2);
+        Library library = new Library(books1);
+        Book book5 = library.getBookFromName("only time will tell");
+        library.checkOutBook(book1);
+
+        library.returnBook("only time will tell");
+        assertEquals(true, book5.isBookInLibrary());
     }
 }

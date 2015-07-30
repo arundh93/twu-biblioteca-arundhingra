@@ -28,4 +28,9 @@ public class Library {
                 return book;
         return null;
     }
+
+    public void returnBook(String bookName) {
+        Book book = getBookFromName(bookName);
+        book.returnInLibrary();
+    }
 }

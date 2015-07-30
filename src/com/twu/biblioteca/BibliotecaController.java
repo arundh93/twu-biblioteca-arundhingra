@@ -23,7 +23,7 @@ public class BibliotecaController {
             view.displayMenu();
             String input = view.takeInput();
             menuOperation = parser.parseInput(input);
-            view.displayListOfBooks(menuOperation.execute(library, view));
+            menuOperation.execute(library, view);
         }
     }
 }

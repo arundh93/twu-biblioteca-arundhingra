@@ -4,13 +4,21 @@ import java.util.ArrayList;
 
 public class CheckOut implements MenuOperation {
 
-    public ArrayList<Book> execute(Library library, View view) {
+    public void execute(Library library, View view) {
+        view.displayOutput("Enter name of the book");
         String bookName = view.takeInput();
-        Book book = library.getBookFromName(bookName);
-        if(book != null && book.isBookInLibrary())
-            library.checkOutBook(library.getBookFromName(bookName));
-        else
-            view.displayOutput("book not in the library");
-        return library.getBooks();
+        if(library.isBookPresent(bookName)) {
+            Book book = library.getBookFromName(bookName);
+            if (book.isBookInLibrary()) {
+                library.checkOutBook(library.getBookFromName(bookName));
+                view.displayOutput("Enjoy the book!");
+            }
+            else {
+                view.displayOutput("Sorry! Book is issued");
+            }
+        }
+        else {
+            view.displayOutput("Sorry! Book not in the library");
+        }
     }
 }

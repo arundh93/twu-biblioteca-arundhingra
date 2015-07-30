@@ -22,10 +22,20 @@ public class Library {
         book.checkOutFromLibrary();
     }
 
+    public boolean isBookPresent(String name) {
+        boolean test = false;
+        for(Book book : books) {
+            if(book.getTitle().equals(name))
+                test = true;
+        }
+        return test;
+    }
+
     public Book getBookFromName(String name) {
-        for (Book book : books)
-            if (book.getTitle().equals(name))
+        for (Book book : books) {
+            if(book.getTitle().equals(name))
                 return book;
+        }
         return null;
     }
 

@@ -28,11 +28,13 @@ public class View {
     }
 
     public void displayMenu() {
-        displayOutput("Main Menu");
+        displayOutput("\n***** Main Menu *****");
         displayOutput("1. List Books");
         displayOutput("2. Checkout Book");
         displayOutput("3. Return book");
-        displayOutput("4. Quit");
+        displayOutput("4. Quit\n");
+        displayOutput("Enter an option (1/2/3/4)");
+
     }
 }
 

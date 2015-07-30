@@ -26,8 +26,16 @@ public class ParserTest {
     @Test
     public void canCreateQuitCommandObjectObjectWhenInputIsThree() {
         Parser parser = new Parser();
-        String input = "3";
+        String input = "4";
 
         assertEquals(Quit.class, parser.parseInput(input).getClass());
+    }
+
+    @Test
+    public void canCreateReturnCommandObjectObjectWhenInputIsThree() {
+        Parser parser = new Parser();
+        String input = "3";
+
+        assertEquals(ReturnBook.class, parser.parseInput(input).getClass());
     }
 }

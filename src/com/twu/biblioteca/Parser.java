@@ -6,9 +6,9 @@ public class Parser {
             return new ListBooks();
         else if(input.equals("2"))
             return new CheckOut();
-        else if(input.equals("3"))
-            return new Quit();
         else if(input.equals("4"))
+            return new Quit();
+        else if(input.equals("3"))
             return new ReturnBook();
         else
             return new InvalidOption();

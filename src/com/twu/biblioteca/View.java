@@ -31,7 +31,8 @@ public class View {
         displayOutput("Main Menu");
         displayOutput("1. List Books");
         displayOutput("2. Checkout Book");
-        displayOutput("3. Quit");
+        displayOutput("3. Return book");
+        displayOutput("4. Quit");
     }
 }
 

@@ -22,7 +22,8 @@ public class View {
 
     public void displayListOfBooks(ArrayList<Book> books) {
         for (Book book : books) {
-            System.out.printf("%-25s %-25s %-25s\n", book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear()));
+            if(book.isBookInLibrary())
+                System.out.printf("%-25s %-25s %-25s\n", book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear()));
         }
     }
 

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class ListBooks implements MenuOperation{
 
     @Override
-    public ArrayList<Book> execute(Library library) {
-        return library.getBooks();
+    public void execute(Library library, View view) {
+        view.displayListOfBooks(library.getBooks());
     }
 }

@@ -10,10 +10,9 @@ public class ListBooksTest {
     public void canReturnListOfBooks() {
         ListBooks listOfBooks = new ListBooks();
         Library library = Mockito.mock(Library.class);
-
-        listOfBooks.execute(library);
+        View view = Mockito.mock(View.class);
+        listOfBooks.execute(library, view);
 
         Mockito.verify(library).getBooks();
     }
-
 }

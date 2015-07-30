@@ -10,6 +10,7 @@ public class Parser {
             return new Quit();
         else if(input.equals("4"))
             return new ReturnBook();
-            return null;
+        else
+            return new InvalidOption();
     }
 }

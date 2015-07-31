@@ -1,22 +1,16 @@
 package com.twu.biblioteca;
 
-
 public class Book {
     private String title;
     private String author;
     private int publicationYear;
-    private boolean isInLibrary;
 
     public Book(String title, String author, int publicationYear) {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
-        this.isInLibrary = true;
     }
 
-    public boolean isBookInLibrary() {
-        return isInLibrary;
-    }
 
     public String getTitle() {
         return title;
@@ -45,12 +39,8 @@ public class Book {
         return title != null ? title.hashCode() : 0;
     }
 
-    public void checkOutFromLibrary() {
-        isInLibrary = false;
-    }
-
-    public void returnInLibrary() {
-        isInLibrary = true;
+    public boolean hasTitle(Book name) {
+        return this.equals(name);
     }
 }
 

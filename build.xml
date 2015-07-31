@@ -31,14 +31,12 @@
             <formatter type="plain" usefile="false"/>
         </junit>
     </target>
-
     <target name ="createjar" depends="runjunit">
         <jar destfile="lib/app.jar"
              basedir="out"
              excludes="**/Test.class"
                 />
     </target>
-
     <target name="run" depends="createjar">
         <java classname="com.twu.biblioteca.BibliotecaApp">
             <arg value="-h"/>

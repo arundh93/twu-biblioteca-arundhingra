@@ -15,12 +15,13 @@ public class CheckOutTest {
         ArrayList<Book> books1 = new ArrayList<Book>();
         books1.add(book1);
         books1.add(book2);
-        Library library = new Library(books1);
+        ArrayList<Book> checkOutBooks = new ArrayList<Book>();
+        Library library = new Library(books1, checkOutBooks);
         View view = Mockito.mock(View.class);
         Mockito.when(view.takeInput()).thenReturn("only time will tell");
 
         checkOut.execute(library, view);
 
-        Mockito.verify(view).displayListOfBooks(library.getBooks());
+        Mockito.verify(view).displayListOfBooks(library.getAvailableBooks());
     }
 }

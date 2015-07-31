@@ -1,24 +1,18 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-
 public class CheckOut implements MenuOperation {
 
     public void execute(Library library, View view) {
         view.displayOutput("Enter name of the book");
         String bookName = view.takeInput();
-        if(library.isBookPresent(bookName)) {
-            Book book = library.getBookFromName(bookName);
-            if (book.isBookInLibrary()) {
-                library.checkOutBook(library.getBookFromName(bookName));
-                view.displayOutput("Enjoy the book!");
-            }
-            else {
-                view.displayOutput("Sorry! Book is issued");
-            }
+        if (library.isBookPresent(bookName, true)) {
+            Book book = library.getBookFromName(bookName, true);
+            library.checkOutBook(book);
+            view.displayOutput("Enjoy the Book!\n");
+            view.displayListOfBooks(library.getAvailableBooks());
         }
         else {
-            view.displayOutput("Sorry! Book not in the library");
+            view.displayOutput("Book not available in the library!");
         }
     }
 }

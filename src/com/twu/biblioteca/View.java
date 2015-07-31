@@ -3,9 +3,8 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class View {
-
-
 
     public void displayWelcomeMessage() {
         displayOutput("***** Welcome To Biblioteca *****");
@@ -22,7 +21,6 @@ public class View {
 
     public void displayListOfBooks(ArrayList<Book> books) {
         for (Book book : books) {
-            if(book.isBookInLibrary())
                 System.out.printf("%-25s %-25s %-25s\n", book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear()));
         }
     }

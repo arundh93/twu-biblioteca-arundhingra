@@ -20,6 +20,6 @@ public class ListBooksTest {
         bookList.add(book2);
         listOfBooks.execute(library, view);
 
-        Mockito.verify(view).displayListOfBooks(library.getBooks());
+        Mockito.verify(view).displayListOfBooks(library.getAvailableBooks());
     }
 }

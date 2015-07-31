@@ -19,10 +19,11 @@ public class BibliotecaControllerTest {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(b1);
         books.add(b2);
+        ArrayList<Book> checkOutBooks = new ArrayList<Book>();
         MenuOperation menuOperation = Mockito.mock(MenuOperation.class);
         Parser parser = Mockito.mock(Parser.class);
         Mockito.when(parser.parseInput(anyString())).thenReturn(menuOperation);
-        Library library = new Library(books);
+        Library library = new Library(books, checkOutBooks);
         BibliotecaController bibliotecaController = new BibliotecaController(view, library, parser);
         Mockito.when(view.takeInput()).thenReturn("1");
         bibliotecaController.start(false);

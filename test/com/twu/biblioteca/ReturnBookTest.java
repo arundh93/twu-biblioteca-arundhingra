@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import org.junit.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 
@@ -12,10 +13,9 @@ public class ReturnBookTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         Mockito.when(view.takeInput()).thenReturn("only time will tell");
+        Mockito.when(library.returnBook(Mockito.anyString())).thenReturn(true);
         returnABook.execute(library, view);
-        Book book = Mockito.mock(Book.class);
-
-        Mockito.verify(library).returnBook(book);
-        Mockito.verify(library).getAvailableBooks();
+        Mockito.verify(view).displayOutput("enter the book to return");
+        Mockito.verify(view).displayOutput("Thank you for returning the book!");
     }
 }

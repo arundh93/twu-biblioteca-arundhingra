@@ -16,44 +16,43 @@ public class Library {
         return availableList;
     }
 
-    public void checkOutBook(Book book) {
-        availableList.remove(book);
-        checkOutList.add(book);
+    public boolean checkOutBook(String bookName) {
+        if (isBookPresent(bookName, availableList)) {
+            availableList.remove(getBookFromName(bookName, availableList));
+            checkOutList.add(getBookFromName(bookName, checkOutList));
+            return true;
+        } else
+            return false;
     }
 
-    public boolean isBookPresent(String name, boolean checkFromAvailableList) {
-        ArrayList <Book> iterator;
-        if(checkFromAvailableList)
-            iterator = availableList;
+    public boolean returnBook(String bookName) {
+        if (isBookPresent(bookName, availableList)) {
+            availableList.add(getBookFromName(bookName, availableList));
+            checkOutList.remove(getBookFromName(bookName, checkOutList));
+            return true;
+        }
         else
-            iterator = checkOutList;
+            return false;
+    }
+
+    public boolean isBookPresent(String name, ArrayList<Book> bookList) {
 
         boolean test = false;
-        for(Book book : iterator) {
-            if(book.hasTitle(getBookFromName(name, checkFromAvailableList)))
+        for (Book book : bookList) {
+            if (book.hasTitle(getBookFromName(name, bookList)))
                 test = true;
         }
         return test;
     }
 
 
-    public Book getBookFromName(String name, boolean checkFromAvailableList) {
-        ArrayList <Book> iterator;
-        if(checkFromAvailableList)
-            iterator = availableList;
-        else
-            iterator = checkOutList;
+    public Book getBookFromName(String name, ArrayList<Book> bookList) {
 
-        for (Book book : iterator) {
-            if(book.getTitle().equals(name))
+        for (Book book : bookList) {
+            if (book.getTitle().equals(name))
                 return book;
         }
         return null;
-    }
-
-    public void returnBook(Book book) {
-        availableList.add(book);
-        checkOutList.remove(book);
     }
 
 }

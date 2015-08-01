@@ -36,7 +36,7 @@ public class LibraryTest {
         ArrayList<Book> checkOutBooks = new ArrayList<Book>();
         Library library = new Library(books1, checkOutBooks);
 
-        assertEquals(book1, library.getBookFromName("only time will tell", true));
+        assertEquals(book1, library.getBookFromName("only time will tell", books1));
     }
 
     @Test
@@ -48,9 +48,9 @@ public class LibraryTest {
         books1.add(book2);
         ArrayList<Book> checkOutBooks = new ArrayList<Book>();
         Library library = new Library(books1, checkOutBooks);
-        Book book5 = library.getBookFromName("only time will tell", false);
+        Book book5 = library.getBookFromName("only time will tell", books1);
         ArrayList<Book> expected = new ArrayList<Book>();
-        library.returnBook(book5);
+        library.returnBook("only time will tell");
         expected.add(book1);
         expected.add(book2);
         expected.add(book5);

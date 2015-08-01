@@ -12,8 +12,8 @@
     </path>
 
     <target name="compile">
-        <mkdir dir="out"/>
-        <javac srcdir="src;test" includeantruntime="false" destdir="out" classpathref="classpath"/>
+        <mkdir dir="build"/>
+        <javac srcdir="src;test" includeantruntime="false" destdir="build" classpathref="classpath"/>
     </target>
 
     <target name="runjunit" depends="compile">
@@ -24,8 +24,11 @@
             <test name="com.twu.biblioteca.BibliotecaControllerTest"/>
             <test name="com.twu.biblioteca.ParserTest"/>
             <test name="com.twu.biblioteca.ListBooksTest"/>
+            <test name="com.twu.biblioteca.ReturnBookTest"/>
+            <test name="com.twu.biblioteca.CheckOutTest"/>
+            <test name="com.twu.biblioteca.InvalidOptionTest"/>
             <classpath>
-                <pathelement location="out"/>
+                <pathelement location="build"/>
                 <path refid="classpath"/>
             </classpath>
             <formatter type="plain" usefile="false"/>
@@ -33,7 +36,7 @@
     </target>
     <target name ="createjar" depends="runjunit">
         <jar destfile="lib/app.jar"
-             basedir="out"
+             basedir="build"
              excludes="**/Test.class"
                 />
     </target>

@@ -1,12 +1,11 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class BibliotecaApp {
     public static void main(String[] args) {
-        View view = new View(new Scanner(System.in));
+        View view = new View();
         Book book1 = new Book("only time will tell", "Jeffery Archer", 2011);
         Book book2 = new Book("sins of a father", "Jeffery Archer", 2009);
         Book book3 = new Book("prodigal daughter", "Jeffery Archer", 2005);

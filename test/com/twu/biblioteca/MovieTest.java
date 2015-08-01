@@ -9,15 +9,23 @@ public class MovieTest {
 
     @Test
     public void canGetTitleOfMovie() {
-        Movie movie = new Movie("singham", "roy");
+        Movie movie = new Movie("singham", "roy", 2009);
 
         assertEquals("singham", movie.getTitle());
     }
 
     @Test
-    public void canGetAuthorOfBook() {
-        Movie movie = new Movie("singham", "roy");
+    public void canGetDirectorOfMovie() {
+        Movie movie = new Movie("singham", "roy", 2009);
 
         assertEquals("roy", movie.getDirector());
+    }
+
+    @Test
+    public void canGetYearOfRealeaseOfMovie() {
+        Movie movie = new Movie("singham", "roy", 2009);
+
+        assertEquals(2009, movie.getYearOfRelease());
+
     }
 }

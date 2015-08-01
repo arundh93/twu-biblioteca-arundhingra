@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import org.junit.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import java.util.ArrayList;
 
@@ -15,13 +16,11 @@ public class CheckOutTest {
         ArrayList<Book> books1 = new ArrayList<Book>();
         books1.add(book1);
         books1.add(book2);
-        ArrayList<Book> checkOutBooks = new ArrayList<Book>();
-        Library library = new Library(books1, checkOutBooks);
+        Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         Mockito.when(view.takeInput()).thenReturn("only time will tell");
-
+        Mockito.when(library.checkOutBook(Mockito.anyString())).thenReturn(true);
         checkOut.execute(library, view);
-
-        Mockito.verify(view).displayListOfBooks(library.getAvailableBooks());
+        Mockito.verify(view).displayOutput("Enter name of the book");
     }
 }

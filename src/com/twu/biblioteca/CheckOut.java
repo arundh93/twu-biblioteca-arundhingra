@@ -7,7 +7,9 @@ public class CheckOut implements MenuOperation {
         String bookName = view.takeInput();
         if (library.checkOutBook(bookName)) {
             view.displayOutput("Enjoy the Book!\n");
-            view.displayListOfBooks(library.getAvailableBooks());
+        }
+        else {
+            view.displayOutput("Sorry! Book not available in the library");
         }
     }
 }

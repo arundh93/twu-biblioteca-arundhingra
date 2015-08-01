@@ -9,5 +9,8 @@ public class ReturnBook implements MenuOperation {
         if (library.returnBook(input)) {
             view.displayOutput("Thank you for returning the book!");
         }
+        else {
+            view.displayOutput("This book does not belong to the library");
+        }
     }
 }

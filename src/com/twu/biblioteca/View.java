@@ -19,19 +19,22 @@ public class View {
         return sc.nextLine();
     }
 
-    public void displayListOfBooks(ArrayList<Book> books) {
-        for (Book book : books) {
-                System.out.printf("%-25s %-25s %-25s\n", book.getTitle(), book.getAuthor(), Integer.toString(book.getPublicationYear()));
+    public void displayListOfBooks(ArrayList<LibraryItem> books) {
+        for (LibraryItem book : books) {
+                displayOutput(book.toString());
         }
     }
 
     public void displayMenu() {
         displayOutput("\n***** Main Menu *****");
         displayOutput("1. List Books");
-        displayOutput("2. Checkout Book");
-        displayOutput("3. Return book");
-        displayOutput("4. Quit\n");
-        displayOutput("Enter an option (1/2/3/4)");
+        displayOutput("2. List Movies");
+        displayOutput("3. Checkout Book");
+        displayOutput("4. Return book");
+        displayOutput("5. Checkout Movie");
+        displayOutput("6. Return Movie");
+        displayOutput("7. Quit\n");
+        displayOutput("Enter an option (1/2/3/4/5/6/7)");
 
     }
 }

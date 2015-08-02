@@ -38,7 +38,7 @@ public class ViewTest {
     @Test
     public void canDisplayListOfBooks() {
         View view = new View();
-        ArrayList<Book> books= new ArrayList<Book>();
+        ArrayList<LibraryItem> books= new ArrayList<LibraryItem>();
         books.add(new Book("book1", "ram", 2000));
         books.add(new Book("book2", "sham", 2010));
 
@@ -57,9 +57,13 @@ public class ViewTest {
 
         assertEquals("\n***** Main Menu *****\n" +
                 "1. List Books\n" +
-                "2. Checkout Book\n" +
-                "3. Return book\n" +
-                "4. Quit\n\n" +
-                "Enter an option (1/2/3/4)\n", outContent.toString());
+                "2. List Movies\n" +
+                "3. Checkout Book\n" +
+                "4. Return book\n" +
+                "5. Checkout Movie\n" +
+                "6. Return Movie\n" +
+                "7. Quit\n" +
+                "\n" +
+                "Enter an option (1/2/3/4/5/6/7)\n", outContent.toString());
     }
 }

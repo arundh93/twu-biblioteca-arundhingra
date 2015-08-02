@@ -7,12 +7,14 @@ public class BibliotecaController {
 
     private View view;
     private ArrayList<Book> books;
-    private Library library;
+    private Library bookLibrary;
+    private Library movieLibrary;
     private Parser parser;
 
-    public BibliotecaController(View view, Library library, Parser parser) {
+    public BibliotecaController(View view, Library bookLibrary, Library movieLibrary, Parser parser) {
         this.view = view;
-        this.library = library;
+        this.bookLibrary = bookLibrary;
+        this.movieLibrary = movieLibrary;
         this.parser = parser;
     }
 
@@ -22,8 +24,8 @@ public class BibliotecaController {
         while(shouldntExit) {
             view.displayMenu();
             String input = view.takeInput();
-            menuOperation = parser. parseInput(input);
-            menuOperation.execute(library, view);
+            menuOperation = parser. parseInput(input, bookLibrary, movieLibrary);
+            menuOperation.execute(view);
         }
     }
 }

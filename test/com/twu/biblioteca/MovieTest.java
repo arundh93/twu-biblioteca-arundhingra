@@ -33,6 +33,6 @@ public class MovieTest {
     public void canGetRatingOfMovie() {
         Movie movie = new Movie("singham", "roy", 2009, 4);
 
-        assertEquals(4, movie.getRating());
+        assertEquals(4  , movie.getRating());
     }
 }

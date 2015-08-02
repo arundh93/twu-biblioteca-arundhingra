@@ -12,7 +12,7 @@ public class InvalidOptionTest {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
 
-        invalidOption.execute(library, view);
+        invalidOption.execute(view);
 
         Mockito.verify(view).displayOutput("Invalid input!");
     }

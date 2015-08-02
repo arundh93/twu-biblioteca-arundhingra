@@ -24,7 +24,7 @@
             <test name="com.twu.biblioteca.BibliotecaControllerTest"/>
             <test name="com.twu.biblioteca.ParserTest"/>
             <test name="com.twu.biblioteca.ListBooksTest"/>
-            <test name="com.twu.biblioteca.ReturnBookTest"/>
+            <test name="com.twu.biblioteca.CheckInTest"/>
             <test name="com.twu.biblioteca.CheckOutTest"/>
             <test name="com.twu.biblioteca.InvalidOptionTest"/>
             <test name="com.twu.biblioteca.MovieTest"/>

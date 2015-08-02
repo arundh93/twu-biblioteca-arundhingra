@@ -12,15 +12,15 @@ public class LibraryTest {
     public void canReturnBookList() {
         Book book1 = new Book("only time will tell", "Jeffery Archer", 2000);
         Book book2 = new Book("sins of a father", "Jeffery Archer", 2000);
-        ArrayList<Book> books1 = new ArrayList<Book>();
+        ArrayList<LibraryItem> books1 = new ArrayList<LibraryItem>();
         books1.add(book1);
         books1.add(book2);
         Book book3 = new Book("only time will tell", "Jeffery Archer", 2000);
         Book book4 = new Book("sins of a father", "Jeffery Archer", 2000);
-        ArrayList<Book> books2 = new ArrayList<Book>();
+        ArrayList<LibraryItem> books2 = new ArrayList<LibraryItem>();
         books2.add(book3);
         books2.add(book4);
-        ArrayList<Book> checkOutBooks = new ArrayList<Book>();
+        ArrayList<LibraryItem> checkOutBooks = new ArrayList<LibraryItem>();
         Library library = new Library(books2, checkOutBooks);
 
         assertEquals(books1, library.getAvailableBooks());
@@ -30,10 +30,10 @@ public class LibraryTest {
     public void canReturnBookByProvidingName() {
         Book book1 = new Book("only time will tell", "Jeffery Archer", 2000);
         Book book2 = new Book("sins of a father", "Jeffery Archer", 2000);
-        ArrayList<Book> books1 = new ArrayList<Book>();
+        ArrayList<LibraryItem> books1 = new ArrayList<LibraryItem>();
         books1.add(book1);
         books1.add(book2);
-        ArrayList<Book> checkOutBooks = new ArrayList<Book>();
+        ArrayList<LibraryItem> checkOutBooks = new ArrayList<LibraryItem>();
         Library library = new Library(books1, checkOutBooks);
 
         assertEquals(book1, library.getBookFromName("only time will tell", books1));
@@ -43,13 +43,13 @@ public class LibraryTest {
     public void bookCanBeReturnedToLibrary() {
         Book book1 = new Book("only time will tell", "Jeffery Archer", 2000);
         Book book2 = new Book("sins of a father", "Jeffery Archer", 2000);
-        ArrayList<Book> books1 = new ArrayList<Book>();
+        ArrayList<LibraryItem> books1 = new ArrayList<LibraryItem>();
         books1.add(book1);
         books1.add(book2);
-        ArrayList<Book> checkOutBooks = new ArrayList<Book>();
+        ArrayList<LibraryItem> checkOutBooks = new ArrayList<LibraryItem>();
         Library library = new Library(books1, checkOutBooks);
-        Book book5 = library.getBookFromName("only time will tell", books1);
-        ArrayList<Book> expected = new ArrayList<Book>();
+        LibraryItem book5 = library.getBookFromName("only time will tell", books1);
+        ArrayList<LibraryItem> expected = new ArrayList<LibraryItem>();
         library.returnBook("only time will tell");
         expected.add(book1);
         expected.add(book2);

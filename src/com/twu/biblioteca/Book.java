@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class Book {
+public class Book implements LibraryItem{
     private String title;
     private String author;
     private int publicationYear;
@@ -11,7 +11,7 @@ public class Book {
         this.publicationYear = publicationYear;
     }
 
-
+    @Override
     public String getTitle() {
         return title;
     }
@@ -39,8 +39,14 @@ public class Book {
         return title != null ? title.hashCode() : 0;
     }
 
-    public boolean hasTitle(Book name) {
+    @Override
+    public boolean hasTitle(LibraryItem name) {
         return this.equals(name);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-25s %-25s %-25s", getTitle(), getAuthor(), Integer.toString(getPublicationYear()));
     }
 }
 

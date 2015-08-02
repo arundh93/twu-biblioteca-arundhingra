@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,33 +10,78 @@ public class ParserTest {
 
     @Test
     public void canCreateListBooksCommandObjectWhenInputIsOne() {
+        Library bookLibrary = Mockito.mock(Library.class);
+        Library movieLibrary = Mockito.mock(Library.class);
+
         Parser parser = new Parser();
         String input = "1";
 
-        assertEquals(ListBooks.class, parser.parseInput(input).getClass());
+        assertEquals(ListBooks.class, parser.parseInput(input, bookLibrary, movieLibrary).getClass());
     }
 
     @Test
-    public void canCreateCheckOutCommandObjectWhenInputIsTwo() {
+    public void canCreateListMoviesCommandObjectWhenInputIsTwo() {
+        Library bookLibrary = Mockito.mock(Library.class);
+        Library movieLibrary = Mockito.mock(Library.class);
+
         Parser parser = new Parser();
         String input = "2";
 
-        assertEquals(CheckOut.class, parser.parseInput(input).getClass());
+        assertEquals(ListMovies.class, parser.parseInput(input, bookLibrary, movieLibrary).getClass());
     }
 
     @Test
     public void canCreateQuitCommandObjectObjectWhenInputIsThree() {
-        Parser parser = new Parser();
-        String input = "4";
+        Library bookLibrary = Mockito.mock(Library.class);
+        Library movieLibrary = Mockito.mock(Library.class);
 
-        assertEquals(Quit.class, parser.parseInput(input).getClass());
+        Parser parser = new Parser();
+        String input = "7";
+
+        assertEquals(Quit.class, parser.parseInput(input, bookLibrary, movieLibrary).getClass());
     }
 
     @Test
-    public void canCreateReturnCommandObjectObjectWhenInputIsThree() {
+    public void canCreateCheckOutCommandObjectForBooksWhenInputIsThree() {
+        Library bookLibrary = Mockito.mock(Library.class);
+        Library movieLibrary = Mockito.mock(Library.class);
+
         Parser parser = new Parser();
         String input = "3";
 
-        assertEquals(ReturnBook.class, parser.parseInput(input).getClass());
+        assertEquals(CheckOut.class, parser.parseInput(input, bookLibrary, movieLibrary).getClass());
+    }
+
+    @Test
+    public void canCreateCheckInCommandForBooksObjectObjectWhenInputIsFour() {
+        Library bookLibrary = Mockito.mock(Library.class);
+        Library movieLibrary = Mockito.mock(Library.class);
+
+        Parser parser = new Parser();
+        String input = "4";
+
+        assertEquals(CheckIn.class, parser.parseInput(input, bookLibrary, movieLibrary).getClass());
+    }
+
+    @Test
+    public void canCreateCheckOutCommandForObjectForMoviesWhenInputIsFour() {
+        Library bookLibrary = Mockito.mock(Library.class);
+        Library movieLibrary = Mockito.mock(Library.class);
+
+        Parser parser = new Parser();
+        String input = "5";
+
+        assertEquals(CheckOut.class, parser.parseInput(input, bookLibrary, movieLibrary).getClass());
+    }
+
+    @Test
+    public void canCreateCheckInCommandForObjectForMoviesWhenInputIsFour() {
+        Library bookLibrary = Mockito.mock(Library.class);
+        Library movieLibrary = Mockito.mock(Library.class);
+
+        Parser parser = new Parser();
+        String input = "6";
+
+        assertEquals(CheckIn.class, parser.parseInput(input, bookLibrary, movieLibrary).getClass());
     }
 }

@@ -2,7 +2,13 @@ package com.twu.biblioteca;
 
 public class CheckOut implements MenuOperation {
 
-    public void execute(Library library, View view) {
+    private Library library;
+
+    public CheckOut(Library library) {
+        this.library = library;
+    }
+
+    public void execute(View view) {
         view.displayOutput("Enter name of the book");
         String bookName = view.takeInput();
         if (library.checkOutBook(bookName)) {

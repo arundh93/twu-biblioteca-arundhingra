@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 
 public class Library {
-    private ArrayList<Book> availableList;
-    private ArrayList<Book> checkOutList;
+    private ArrayList<LibraryItem> availableList;
+    private ArrayList<LibraryItem> checkOutList;
 
-    public Library(ArrayList<Book> availableList, ArrayList<Book> checkOutList) {
+    public Library(ArrayList<LibraryItem> availableList, ArrayList<LibraryItem> checkOutList) {
         this.availableList = availableList;
         this.checkOutList = checkOutList;
     }
 
-    public ArrayList<Book> getAvailableBooks() {
+    public ArrayList<LibraryItem> getAvailableBooks() {
         return availableList;
     }
 
@@ -35,10 +35,10 @@ public class Library {
             return false;
     }
 
-    public boolean isBookPresent(String name, ArrayList<Book> bookList) {
+    public boolean isBookPresent(String name, ArrayList<LibraryItem> bookList) {
 
         boolean test = false;
-        for (Book book : bookList) {
+        for (LibraryItem book : bookList) {
             if (book.hasTitle(getBookFromName(name, bookList)))
                 test = true;
         }
@@ -46,9 +46,9 @@ public class Library {
     }
 
 
-    public Book getBookFromName(String name, ArrayList<Book> bookList) {
+    public LibraryItem getBookFromName(String name, ArrayList<LibraryItem> bookList) {
 
-        for (Book book : bookList) {
+        for (LibraryItem book : bookList) {
             if (book.getTitle().equals(name))
                 return book;
         }

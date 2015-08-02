@@ -1,9 +1,15 @@
 package com.twu.biblioteca;
 
-public class ReturnBook implements MenuOperation {
+public class CheckIn implements MenuOperation {
+
+    private Library library;
+
+    public CheckIn(Library library) {
+        this.library = library;
+    }
 
     @Override
-    public void execute(Library library, View view) {
+    public void execute(View view) {
         view.displayOutput("enter the book to return");
         String input = view.takeInput();
         if (library.returnBook(input)) {

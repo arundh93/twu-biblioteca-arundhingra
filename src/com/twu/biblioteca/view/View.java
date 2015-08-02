@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.view;
+
+import com.twu.biblioteca.libraryitem.LibraryItem;
 
 import java.util.ArrayList;
 import java.util.Scanner;

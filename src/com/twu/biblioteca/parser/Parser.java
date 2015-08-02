@@ -1,4 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.parser;
+
+import com.twu.biblioteca.menu.*;
+import com.twu.biblioteca.model.Library;
 
 public class Parser {
     public MenuOperation parseInput(String input, Library bookLibrary, Library movieLibrary) {

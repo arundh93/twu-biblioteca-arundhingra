@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.libraryitem;
 
 public class Movie implements LibraryItem {
     private String movieName;

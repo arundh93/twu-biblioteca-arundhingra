@@ -1,4 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.model;
+
+import com.twu.biblioteca.parser.Parser;
+import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.libraryitem.Book;
+import com.twu.biblioteca.menu.MenuOperation;
 
 import java.util.ArrayList;
 

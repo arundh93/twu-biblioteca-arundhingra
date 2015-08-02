@@ -1,4 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.menu;
+
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.view.View;
 
 public class CheckIn implements MenuOperation {
 
@@ -12,7 +15,7 @@ public class CheckIn implements MenuOperation {
     public void execute(View view) {
         view.displayOutput("enter the book to return");
         String input = view.takeInput();
-        if (library.returnBook(input)) {
+        if (library.returnLibraryItem(input)) {
             view.displayOutput("Thank you for returning the book!");
         }
         else {

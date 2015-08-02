@@ -1,4 +1,12 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.entrypoint;
+
+import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.libraryitem.Book;
+import com.twu.biblioteca.libraryitem.LibraryItem;
+import com.twu.biblioteca.libraryitem.Movie;
+import com.twu.biblioteca.model.BibliotecaController;
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.parser.Parser;
 
 import java.util.ArrayList;
 

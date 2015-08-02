@@ -1,5 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.parser;
 
+import com.twu.biblioteca.menu.*;
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.parser.Parser;
 import org.junit.Test;
 import org.mockito.Mockito;
 

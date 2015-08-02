@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.libraryitem;
 
 public class Book implements LibraryItem{
     private String title;

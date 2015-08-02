@@ -1,5 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.libraryitem.Book;
+import com.twu.biblioteca.libraryitem.LibraryItem;
+import com.twu.biblioteca.model.Library;
 import org.junit.Test;
 import java.util.ArrayList;
 
@@ -36,25 +39,22 @@ public class LibraryTest {
         ArrayList<LibraryItem> checkOutBooks = new ArrayList<LibraryItem>();
         Library library = new Library(books1, checkOutBooks);
 
-        assertEquals(book1, library.getBookFromName("only time will tell", books1));
+        assertEquals(book1, library.getItemFromName("only time will tell", books1));
     }
 
     @Test
     public void bookCanBeReturnedToLibrary() {
         Book book1 = new Book("only time will tell", "Jeffery Archer", 2000);
         Book book2 = new Book("sins of a father", "Jeffery Archer", 2000);
-        ArrayList<LibraryItem> books1 = new ArrayList<LibraryItem>();
-        books1.add(book1);
-        books1.add(book2);
+        ArrayList<LibraryItem> availableList = new ArrayList<LibraryItem>();
+        availableList.add(book1);
+        availableList.add(book2);
         ArrayList<LibraryItem> checkOutBooks = new ArrayList<LibraryItem>();
-        Library library = new Library(books1, checkOutBooks);
-        LibraryItem book5 = library.getBookFromName("only time will tell", books1);
-        ArrayList<LibraryItem> expected = new ArrayList<LibraryItem>();
-        library.returnBook("only time will tell");
-        expected.add(book1);
-        expected.add(book2);
-        expected.add(book5);
+        Library library = new Library(availableList, checkOutBooks);
+        library.checkOutLibraryItem("only time will tell");
 
-        assertEquals(expected, books1);
+        library.returnLibraryItem("only time will tell");
+
+        assertEquals(availableList, library.getAvailableBooks());
     }
 }

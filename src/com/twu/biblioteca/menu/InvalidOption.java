@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.menu;
+
+import com.twu.biblioteca.view.View;
 
 public class InvalidOption implements MenuOperation {
 

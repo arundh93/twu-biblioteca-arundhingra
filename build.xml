@@ -18,16 +18,16 @@
 
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
-            <test name="com.twu.biblioteca.ViewTest"/>
-            <test name="com.twu.biblioteca.BookTest"/>
-            <test name="com.twu.biblioteca.LibraryTest"/>
-            <test name="com.twu.biblioteca.BibliotecaControllerTest"/>
-            <test name="com.twu.biblioteca.ParserTest"/>
-            <test name="com.twu.biblioteca.ListBooksTest"/>
-            <test name="com.twu.biblioteca.CheckInTest"/>
-            <test name="com.twu.biblioteca.CheckOutTest"/>
-            <test name="com.twu.biblioteca.InvalidOptionTest"/>
-            <test name="com.twu.biblioteca.MovieTest"/>
+            <test name="com.twu.biblioteca.view.ViewTest"/>
+            <test name="com.twu.biblioteca.libraryitem.BookTest"/>
+            <test name="com.twu.biblioteca.model.LibraryTest"/>
+            <test name="com.twu.biblioteca.model.BibliotecaControllerTest"/>
+            <test name="com.twu.biblioteca.parser.ParserTest"/>
+            <test name="com.twu.biblioteca.menu.ListBooksTest"/>
+            <test name="com.twu.biblioteca.menu.CheckInTest"/>
+            <test name="com.twu.biblioteca.menu.CheckOutTest"/>
+            <test name="com.twu.biblioteca.menu.InvalidOptionTest"/>
+            <test name="com.twu.biblioteca.libraryitem.MovieTest"/>
             <classpath>
                 <pathelement location="build"/>
                 <path refid="classpath"/>
@@ -42,7 +42,7 @@
                 />
     </target>
     <target name="run" depends="createjar">
-        <java classname="com.twu.biblioteca.BibliotecaApp">
+        <java classname="com.twu.biblioteca.entrypoint.BibliotecaApp">
             <arg value="-h"/>
             <classpath>
                 <pathelement location="lib/app.jar"/>

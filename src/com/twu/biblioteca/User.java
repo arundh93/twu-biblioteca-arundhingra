@@ -28,4 +28,8 @@ public class User {
     public ArrayList<LibraryItem> getIssuedBooks() {
         return issuedBooks;
     }
+
+    public ArrayList<LibraryItem> getIssuedMovies() {
+        return issuedMovies;
+    }
 }

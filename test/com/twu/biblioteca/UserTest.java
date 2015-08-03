@@ -1,3 +1,5 @@
+package com.twu.biblioteca;
+
 import com.twu.biblioteca.User;
 import com.twu.biblioteca.libraryitem.LibraryItem;
 import com.twu.biblioteca.model.Library;
@@ -22,9 +24,17 @@ public class UserTest {
     public void canReturnIssuedBooks() {
         ArrayList<LibraryItem> books = new ArrayList<LibraryItem>();
         ArrayList<LibraryItem> movies = new ArrayList<LibraryItem>();
-
         User user = new User("arun", "arun@xyz.com", "123456789", books, movies);
 
         assertEquals(new ArrayList<LibraryItem>(), user.getIssuedBooks());
+    }
+
+    @Test
+    public void canReturnIssuedMovies() {
+        ArrayList<LibraryItem> books = new ArrayList<LibraryItem>();
+        ArrayList<LibraryItem> movies = new ArrayList<LibraryItem>();
+        User user = new User("arun", "arun@xyz.com", "123456789", books, movies);
+
+        assertEquals(new ArrayList<LibraryItem>(), user.getIssuedMovies());
     }
 }

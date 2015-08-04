@@ -37,8 +37,8 @@ public class User {
         return issuedMovies;
     }
 
-    public void verify(String userName, String passward) {
-
+    public boolean verify(String name, String pass) {
+        return userName.equals(name) && passward.equals(pass);
     }
 
     @Override

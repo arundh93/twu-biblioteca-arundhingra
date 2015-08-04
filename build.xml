@@ -29,6 +29,7 @@
             <test name="com.twu.biblioteca.menu.InvalidOptionTest"/>
             <test name="com.twu.biblioteca.libraryitem.MovieTest"/>
             <test name="com.twu.biblioteca.UserTest"/>
+            <test name="com.twu.biblioteca.LoginTest"/>
             <classpath>
                 <pathelement location="build"/>
                 <path refid="classpath"/>

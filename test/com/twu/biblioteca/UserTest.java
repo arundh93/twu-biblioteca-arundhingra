@@ -42,8 +42,6 @@ public class UserTest {
         ArrayList<LibraryItem> movies = new ArrayList<LibraryItem>();
         User user1 = new User("arun", "arun@xyz.com", "123456789", books, movies, "123", "123-4567");
 
-        User user2 = new User("arun", "arun@xyz.com", "123456789", books, movies, "123", "123-4567");
-
-        assertEquals(user2, user1);
+        assertEquals(true, user1.verify("123-4567", "123"));
     }
 }

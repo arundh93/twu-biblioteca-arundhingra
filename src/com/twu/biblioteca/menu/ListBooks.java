@@ -3,7 +3,7 @@ package com.twu.biblioteca.menu;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.view.View;
 
-public class    ListBooks implements MenuOperation{
+public class ListBooks implements MenuOperation{
 
 
     private Library bookLibrary;
@@ -14,6 +14,6 @@ public class    ListBooks implements MenuOperation{
 
     @Override
     public void execute(View view) {
-        view.displayListOfBooks(bookLibrary.getAvailableBooks());
+        view.displayListOfBooks(bookLibrary.getAvailableItems());
     }
 }

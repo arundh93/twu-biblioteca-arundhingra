@@ -11,13 +11,17 @@ public class User {
     private final String phoneNumber;
     private ArrayList<LibraryItem> issuedBooks;
     private final ArrayList<LibraryItem> issuedMovies;
+    private String passward;
+    private String userName;
 
-    public User(String name, String email, String phoneNumber, ArrayList<LibraryItem> issuedBooks, ArrayList<LibraryItem> issuedMovies) {
+    public User(String name, String email, String phoneNumber, ArrayList<LibraryItem> issuedBooks, ArrayList<LibraryItem> issuedMovies, String passward, String userName) {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.issuedBooks = issuedBooks;
         this.issuedMovies = issuedMovies;
+        this.passward = passward;
+        this.userName = userName;
     }
 
     @Override
@@ -31,5 +35,28 @@ public class User {
 
     public ArrayList<LibraryItem> getIssuedMovies() {
         return issuedMovies;
+    }
+
+    public void verify(String userName, String passward) {
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (passward != null ? !passward.equals(user.passward) : user.passward != null) return false;
+        return !(userName != null ? !userName.equals(user.userName) : user.userName != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = passward != null ? passward.hashCode() : 0;
+        result = 31 * result + (userName != null ? userName.hashCode() : 0);
+        return result;
     }
 }

@@ -1,8 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.User;
 import com.twu.biblioteca.libraryitem.LibraryItem;
-import com.twu.biblioteca.model.Library;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,7 +13,7 @@ public class UserTest {
     public void canReturnItsInformation() {
         ArrayList<LibraryItem> books = new ArrayList<LibraryItem>();
         ArrayList<LibraryItem> movies = new ArrayList<LibraryItem>();
-        User user = new User("arun", "arun@xyz.com", "123456789", books, movies);
+        User user = new User("arun", "arun@xyz.com", "123456789", books, movies, "123", "123-4567");
 
         assertEquals("arun                      arun@xyz.com              123456789                ", user.toString());
     }
@@ -24,7 +22,7 @@ public class UserTest {
     public void canReturnIssuedBooks() {
         ArrayList<LibraryItem> books = new ArrayList<LibraryItem>();
         ArrayList<LibraryItem> movies = new ArrayList<LibraryItem>();
-        User user = new User("arun", "arun@xyz.com", "123456789", books, movies);
+        User user = new User("arun", "arun@xyz.com", "123456789", books, movies, "123", "123-4567");
 
         assertEquals(new ArrayList<LibraryItem>(), user.getIssuedBooks());
     }
@@ -33,8 +31,19 @@ public class UserTest {
     public void canReturnIssuedMovies() {
         ArrayList<LibraryItem> books = new ArrayList<LibraryItem>();
         ArrayList<LibraryItem> movies = new ArrayList<LibraryItem>();
-        User user = new User("arun", "arun@xyz.com", "123456789", books, movies);
+        User user = new User("arun", "arun@xyz.com", "123456789", books, movies, "123", "123-4567");
 
         assertEquals(new ArrayList<LibraryItem>(), user.getIssuedMovies());
+    }
+
+    @Test
+    public void canBeVerifiedAsARegisteredUser() {
+        ArrayList<LibraryItem> books = new ArrayList<LibraryItem>();
+        ArrayList<LibraryItem> movies = new ArrayList<LibraryItem>();
+        User user1 = new User("arun", "arun@xyz.com", "123456789", books, movies, "123", "123-4567");
+
+        User user2 = new User("arun", "arun@xyz.com", "123456789", books, movies, "123", "123-4567");
+
+        assertEquals(user2, user1);
     }
 }

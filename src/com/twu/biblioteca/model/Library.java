@@ -14,8 +14,12 @@ public class Library {
         this.checkOutList = checkOutList;
     }
 
-    public ArrayList<LibraryItem> getAvailableBooks() {
+    public ArrayList<LibraryItem> getAvailableItems() {
         return availableList;
+    }
+
+    public ArrayList<LibraryItem> getCheckedOutItems() {
+        return checkOutList;
     }
 
     public boolean checkOutLibraryItem(String itemName) {

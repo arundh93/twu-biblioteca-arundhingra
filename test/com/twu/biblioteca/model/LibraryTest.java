@@ -2,7 +2,6 @@ package com.twu.biblioteca.model;
 
 import com.twu.biblioteca.libraryitem.Book;
 import com.twu.biblioteca.libraryitem.LibraryItem;
-import com.twu.biblioteca.model.Library;
 import org.junit.Test;
 import java.util.ArrayList;
 
@@ -26,7 +25,7 @@ public class LibraryTest {
         ArrayList<LibraryItem> checkOutBooks = new ArrayList<LibraryItem>();
         Library library = new Library(books2, checkOutBooks);
 
-        assertEquals(books1, library.getAvailableBooks());
+        assertEquals(books1, library.getAvailableItems());
     }
 
     @Test
@@ -55,6 +54,20 @@ public class LibraryTest {
 
         library.returnLibraryItem("only time will tell");
 
-        assertEquals(availableList, library.getAvailableBooks());
+        assertEquals(availableList, library.getAvailableItems());
+    }
+
+    @Test
+    public void canRe() {
+        Book book1 = new Book("only time will tell", "Jeffery Archer", 2000);
+        Book book2 = new Book("sins of a father", "Jeffery Archer", 2000);
+        ArrayList<LibraryItem> availableList = new ArrayList<LibraryItem>();
+        availableList.add(book1);
+        availableList.add(book2);
+        ArrayList<LibraryItem> checkOutBooks = new ArrayList<LibraryItem>();
+        Library library = new Library(availableList, checkOutBooks);
+        library.checkOutLibraryItem("only time will tell");
+
+        assertEquals(checkOutBooks, library.getCheckedOutItems());
     }
 }

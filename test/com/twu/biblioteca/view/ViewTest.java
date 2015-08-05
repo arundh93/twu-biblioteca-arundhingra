@@ -2,7 +2,6 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.libraryitem.Book;
 import com.twu.biblioteca.libraryitem.LibraryItem;
-import com.twu.biblioteca.view.View;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,7 +44,7 @@ public class ViewTest {
         books.add(new Book("book1", "ram", 2000));
         books.add(new Book("book2", "sham", 2010));
 
-        view.displayListOfBooks(books);
+        view.displayList(books);
 
         assertEquals(
                 "book1                     ram                       2000                     \n" +
@@ -66,6 +65,8 @@ public class ViewTest {
                 "5. Checkout Movie\n" +
                 "6. Return Movie\n" +
                 "7. Quit\n" +
+                "0. Show details\n" +
+                "10. logout\n" +
                 "\n" +
                 "Enter an option (1/2/3/4/5/6/7)\n", outContent.toString());
     }

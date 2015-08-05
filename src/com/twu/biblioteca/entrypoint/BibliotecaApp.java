@@ -1,5 +1,7 @@
 package com.twu.biblioteca.entrypoint;
 
+import com.twu.biblioteca.Login;
+import com.twu.biblioteca.User;
 import com.twu.biblioteca.view.View;
 import com.twu.biblioteca.libraryitem.Book;
 import com.twu.biblioteca.libraryitem.LibraryItem;
@@ -13,6 +15,15 @@ import java.util.ArrayList;
 
 public class BibliotecaApp {
     public static void main(String[] args) {
+        User user1 = new User("arun", "zxc.com", "123456789", "111", "111-1111", "admin");
+        User user2 = new User("akash", "qwe.com", "125677897", "321", "765-4321", "user");
+        User user3 = new User("abih", "qwes.com", "129877897", "222", "222-2222", "user");
+
+        ArrayList<User> userList = new ArrayList<User>();
+        userList.add(user2);
+        userList.add(user1);
+        userList.add(user3);
+        Login login = new Login(userList);
         View view = new View();
         Book book1 = new Book("only time will tell", "Jeffery Archer", 2011);
         Book book2 = new Book("sins of a father", "Jeffery Archer", 2009);
@@ -29,11 +40,13 @@ public class BibliotecaApp {
         availableMovieList.add(movie1);
         availableMovieList.add(movie2);
         availableMovieList.add(movie3);
+        ArrayList<String> bookOwnership = new ArrayList<String>();
+        ArrayList<String> movieOwnership = new ArrayList<String>();
         ArrayList<LibraryItem> movieCheckOutList = new ArrayList<LibraryItem>();
-        Library bookLibrary = new Library(availableBookList, bookCheckOutList);
-        Library movieLibrary = new Library(availableMovieList, movieCheckOutList);
-        Parser parser = new Parser();
-        BibliotecaController application = new BibliotecaController(view, bookLibrary, movieLibrary, parser);
+        Library bookLibrary = new Library(availableBookList, bookCheckOutList, bookOwnership);
+        Library movieLibrary = new Library(availableMovieList, movieCheckOutList, movieOwnership);
+        Parser parser = new Parser(bookLibrary, movieLibrary, login);
+        BibliotecaController application = new BibliotecaController(view, bookLibrary, movieLibrary, parser, login);
         application.start(true);
     }
 }

@@ -1,5 +1,6 @@
 package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.Login;
 import com.twu.biblioteca.parser.Parser;
 import com.twu.biblioteca.view.View;
 import com.twu.biblioteca.libraryitem.Book;
@@ -28,9 +29,10 @@ public class BibliotecaControllerTest {
         Parser parser = Mockito.mock(Parser.class);
         Library bookLibrary = Mockito.mock(Library.class);
         Library movieLibrary = Mockito.mock(Library.class);
-        Mockito.when(parser.parseInput("1", bookLibrary, movieLibrary)).thenReturn(menuOperation);
-
-        BibliotecaController bibliotecaController = new BibliotecaController(view, bookLibrary, movieLibrary, parser);
+        Mockito.when(parser.parseInput("1")).thenReturn(menuOperation);
+        ArrayList userList = Mockito.mock(ArrayList.class);
+        Login login = new Login(userList);
+        BibliotecaController bibliotecaController = new BibliotecaController(view, bookLibrary, movieLibrary, parser, login);
         Mockito.when(view.takeInput()).thenReturn("1");
         bibliotecaController.start(false);
 

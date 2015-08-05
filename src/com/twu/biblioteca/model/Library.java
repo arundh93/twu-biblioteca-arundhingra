@@ -1,5 +1,6 @@
 package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.Login;
 import com.twu.biblioteca.libraryitem.LibraryItem;
 
 import java.util.ArrayList;
@@ -8,10 +9,12 @@ import java.util.ArrayList;
 public class Library {
     private ArrayList<LibraryItem> availableList;
     private ArrayList<LibraryItem> checkOutList;
+    private ArrayList<String> ownership;
 
-    public Library(ArrayList<LibraryItem> availableList, ArrayList<LibraryItem> checkOutList) {
+    public Library(ArrayList<LibraryItem> availableList, ArrayList<LibraryItem> checkOutList, ArrayList<String> ownership) {
         this.availableList = availableList;
         this.checkOutList = checkOutList;
+        this.ownership = ownership;
     }
 
     public ArrayList<LibraryItem> getAvailableItems() {
@@ -22,26 +25,39 @@ public class Library {
         return checkOutList;
     }
 
-    public boolean checkOutLibraryItem(String itemName) {
+    public boolean checkOutLibraryItem(String itemName, Login login) {
         if (isLibraryItemPresent(itemName, availableList)) {
-            checkOutList.add(getItemFromName(itemName, availableList));
-            availableList.remove(getItemFromName(itemName, availableList));
+            addToCheckOutList(itemName, login);
             return true;
         } else
             return false;
     }
 
-    public boolean returnLibraryItem(String itemName) {
+    private void addToCheckOutList(String itemName, Login login) {
+        checkOutList.add(getItemFromName(itemName, availableList));
+        ownership.add(login.getCurrentUserName());
+        availableList.remove(getItemFromName(itemName, availableList));
+    }
+
+    public boolean returnLibraryItem(String itemName, Login login) {
         if (isLibraryItemPresent(itemName, checkOutList)) {
-            availableList.add(getItemFromName(itemName, checkOutList));
-            checkOutList.remove(getItemFromName(itemName, checkOutList));
-            return true;
-        }
-        else
+            int index = checkOutList.indexOf(getItemFromName(itemName, checkOutList));
+            if (login.getCurrentUserName().equals(ownership.get(index))) {
+                addToAvailableList(itemName, login);
+                return true;
+               } else
+                return false;
+        } else
             return false;
     }
 
-    public boolean isLibraryItemPresent(String name, ArrayList<LibraryItem> itemList) {
+    private void addToAvailableList(String itemName, Login login) {
+        availableList.add(getItemFromName(itemName, checkOutList));
+        checkOutList.remove(getItemFromName(itemName, checkOutList));
+        ownership.remove(login.getCurrentUserName());
+    }
+
+    private boolean isLibraryItemPresent(String name, ArrayList<LibraryItem> itemList) {
 
         boolean test = false;
         for (LibraryItem item : itemList) {
@@ -61,4 +77,7 @@ public class Library {
         return null;
     }
 
+    public ArrayList<String> getOwnershipDetails() {
+        return ownership;
+    }
 }

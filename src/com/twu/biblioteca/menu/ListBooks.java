@@ -14,6 +14,6 @@ public class ListBooks implements MenuOperation{
 
     @Override
     public void execute(View view) {
-        view.displayListOfBooks(bookLibrary.getAvailableItems());
+        view.displayList(bookLibrary.getAvailableItems());
     }
 }

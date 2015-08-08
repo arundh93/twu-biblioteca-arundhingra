@@ -37,9 +37,6 @@ public class Login {
         userLogged = false;
     }
 
-    public int indexOfUser(User user) {
-        return userList.indexOf(user);
-    }
 
     public boolean setCurrentUser(String userName, String password) {
         boolean state = false;

@@ -29,15 +29,6 @@ public class ViewTest {
     }
 
     @Test
-    public void canDisplayWelcomeMessage() {
-        View view = new View();
-
-        view.displayWelcomeMessage();
-
-        assertEquals("***** Welcome To Biblioteca *****\n", outContent.toString());
-    }
-
-    @Test
     public void canDisplayListOfBooks() {
         View view = new View();
         ArrayList<LibraryItem> books= new ArrayList<LibraryItem>();
@@ -51,23 +42,4 @@ public class ViewTest {
                 "book2                     sham                      2010                     \n", outContent.toString());
     }
 
-    @Test
-    public void canDisplayMenu() {
-        View view = new View();
-
-        view.displayMenu();
-
-        assertEquals("\n***** Main Menu *****\n" +
-                "1. List Books\n" +
-                "2. List Movies\n" +
-                "3. Checkout Book\n" +
-                "4. Return book\n" +
-                "5. Checkout Movie\n" +
-                "6. Return Movie\n" +
-                "7. Quit\n" +
-                "0. Show details\n" +
-                "10. logout\n" +
-                "\n" +
-                "Enter an option (1/2/3/4/5/6/7)\n", outContent.toString());
-    }
 }

@@ -18,7 +18,7 @@ public class UserView implements ViewInterface {
         this.parser = parser;
     }
     @Override
-    public ViewInterface render(Controller controller) {
+    public ViewInterface render(ViewInterface viewInterface) {
         System.out.println("\n***** Main Menu *****\n" +
                 "1. List Books\n" +
                 "2. List Movies\n" +

@@ -1,7 +1,5 @@
 package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.test.Controller;
-
 public class WelcomeView implements ViewInterface{
 
     LoginView loginView;
@@ -9,7 +7,7 @@ public class WelcomeView implements ViewInterface{
         this.loginView = loginView;
     }
     @Override
-    public ViewInterface render(Controller controller) {
+    public ViewInterface render(ViewInterface viewInterface) {
         System.out.println("===================================");
         System.out.println("****** Welcome to Biblioteca ******");
         System.out.println("===================================");

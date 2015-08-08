@@ -14,12 +14,12 @@ public class Controller {
         this.loginView = loginView;
     }
     public void run() {
-        view = welcomeView.render(this);
+        view = welcomeView.render(welcomeView);
         while (true) {
             if(view != null)
-                view = view.render(this);
+                view = view.render(view);
             else
-                view = loginView.render(this);
+                view = loginView.render(view);
         }
     }
 }

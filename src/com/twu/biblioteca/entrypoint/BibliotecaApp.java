@@ -49,15 +49,16 @@ public class BibliotecaApp {
         Library bookLibrary = new Library(availableBookList, bookCheckOutList, bookOwnership);
         Library movieLibrary = new Library(availableMovieList, movieCheckOutList, movieOwnership);
 
+        View view = new View();
         Scanner scanner = new Scanner(System.in);
         ChoiceView choiceView = new ChoiceView(scanner);
-        ListItemView listItemView = new ListItemView();
+        ListItemView listItemView = new ListItemView(view);
         Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView, listItemView);
         InitialView initialView = new InitialView();
 
-        AdminView adminView = new AdminView(scanner, parser);
+        AdminView adminView = new AdminView(parser, view);
         UserView userView = new UserView(scanner, parser);
-        LoginView loginView = new LoginView(scanner, login, userView, adminView, initialView);
+        LoginView loginView = new LoginView(view, login, userView, adminView, initialView);
         WelcomeView welcomeView = new WelcomeView(loginView);
         Controller controller = new Controller(welcomeView, loginView);
         controller.run();

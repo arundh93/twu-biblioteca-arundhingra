@@ -39,7 +39,6 @@ public class View {
         displayOutput("0. Show details");
         displayOutput("10. logout\n");
         displayOutput("Enter an option (1/2/3/4/5/6/7)");
-
     }
 
     public void displayAdminMenu() {

@@ -1,6 +1,5 @@
 package com.twu.biblioteca.model;
 
-import com.twu.biblioteca.Login;
 import com.twu.biblioteca.libraryitem.LibraryItem;
 
 import java.util.ArrayList;
@@ -45,7 +44,7 @@ public class Library {
             if (login.getCurrentUserName().equals(ownership.get(index))) {
                 addToAvailableList(itemName, login);
                 return true;
-               } else
+            } else
                 return false;
         } else
             return false;

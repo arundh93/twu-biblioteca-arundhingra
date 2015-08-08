@@ -1,9 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.test;
 
-import com.twu.biblioteca.libraryitem.LibraryItem;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 

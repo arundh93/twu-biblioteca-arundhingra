@@ -1,8 +1,12 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.model;
+
+import com.twu.biblioteca.test.User;
 
 import java.util.ArrayList;
 
+
 public class Login {
+
 
     private ArrayList<User> userList;
     private User currentUser;
@@ -21,7 +25,7 @@ public class Login {
         return currentUser.getName();
     }
 
-    public  User getCurrentUser() {
+    public User getCurrentUser() {
         return currentUser;
     }
 
@@ -36,6 +40,7 @@ public class Login {
     public int indexOfUser(User user) {
         return userList.indexOf(user);
     }
+
     public boolean setCurrentUser(String userName, String password) {
         boolean state = false;
         for (User user : userList) {
@@ -44,11 +49,9 @@ public class Login {
                 userLogged = true;
                 state = true;
                 break;
-            }
-            else
+            } else
                 state = false;
         }
-
         return state;
     }
 }

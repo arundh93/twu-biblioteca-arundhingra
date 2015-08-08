@@ -1,8 +1,9 @@
 package com.twu.biblioteca.parser;
 
-import com.twu.biblioteca.Login;
 import com.twu.biblioteca.menu.*;
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.Login;
+import com.twu.biblioteca.view.*;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -16,11 +17,13 @@ public class ParserTest {
         Library bookLibrary = Mockito.mock(Library.class);
         Library movieLibrary = Mockito.mock(Library.class);
         Login login = Mockito.mock(Login.class);
-
-        Parser parser = new Parser(bookLibrary, movieLibrary, login);
+        ListItemView listItemView = Mockito.mock(ListItemView.class);
+        ChoiceView choiceView = Mockito.mock(ChoiceView.class);
+        Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView,listItemView);
         String input = "1";
 
-        assertEquals(ListBooks.class, parser.parseInput(input).getClass());
+        ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
+        assertEquals(ListItem.class, parser.parseInput(input, viewInterface).getClass());
     }
 
     @Test
@@ -29,10 +32,14 @@ public class ParserTest {
         Library movieLibrary = Mockito.mock(Library.class);
         Login login = Mockito.mock(Login.class);
 
-        Parser parser = new Parser(bookLibrary, movieLibrary, login);
+        ListItemView listItemView = Mockito.mock(ListItemView.class);
+        ChoiceView choiceView = Mockito.mock(ChoiceView.class);
+        Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView,listItemView);
         String input = "2";
 
-        assertEquals(ListMovies.class, parser.parseInput(input).getClass());
+        ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
+
+        assertEquals(ListItem.class, parser.parseInput(input, viewInterface).getClass());
     }
 
     @Test
@@ -41,10 +48,14 @@ public class ParserTest {
         Library movieLibrary = Mockito.mock(Library.class);
         Login login = Mockito.mock(Login.class);
 
-        Parser parser = new Parser(bookLibrary, movieLibrary, login);
+        ListItemView listItemView = Mockito.mock(ListItemView.class);
+        ChoiceView choiceView = Mockito.mock(ChoiceView.class);
+        Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView,listItemView);
         String input = "7";
 
-        assertEquals(Quit.class, parser.parseInput(input).getClass());
+        ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
+
+        assertEquals(Quit.class, parser.parseInput(input, viewInterface).getClass());
     }
 
     @Test
@@ -53,10 +64,14 @@ public class ParserTest {
         Library movieLibrary = Mockito.mock(Library.class);
         Login login = Mockito.mock(Login.class);
 
-        Parser parser = new Parser(bookLibrary, movieLibrary, login);
+        ListItemView listItemView = Mockito.mock(ListItemView.class);
+        ChoiceView choiceView = Mockito.mock(ChoiceView.class);
+        Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView,listItemView);
         String input = "3";
 
-        assertEquals(CheckOut.class, parser.parseInput(input).getClass());
+        ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
+
+        assertEquals(CheckOut.class, parser.parseInput(input, viewInterface).getClass());
     }
 
     @Test
@@ -65,10 +80,14 @@ public class ParserTest {
         Library movieLibrary = Mockito.mock(Library.class);
         Login login = Mockito.mock(Login.class);
 
-        Parser parser = new Parser(bookLibrary, movieLibrary, login);
+        ListItemView listItemView = Mockito.mock(ListItemView.class);
+        ChoiceView choiceView = Mockito.mock(ChoiceView.class);
+        Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView,listItemView);
         String input = "4";
 
-        assertEquals(CheckIn.class, parser.parseInput(input).getClass());
+        ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
+
+        assertEquals(CheckIn.class, parser.parseInput(input, viewInterface).getClass());
     }
 
     @Test
@@ -77,10 +96,15 @@ public class ParserTest {
         Library movieLibrary = Mockito.mock(Library.class);
         Login login = Mockito.mock(Login.class);
 
-        Parser parser = new Parser(bookLibrary, movieLibrary, login);
+        ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
+
+        ListItemView listItemView = Mockito.mock(ListItemView.class);
+        ChoiceView choiceView = Mockito.mock(ChoiceView.class);
+        Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView,listItemView);
         String input = "5";
 
-        assertEquals(CheckOut.class, parser.parseInput(input).getClass());
+
+        assertEquals(CheckOut.class, parser.parseInput(input, viewInterface).getClass());
     }
 
     @Test
@@ -89,9 +113,13 @@ public class ParserTest {
         Library movieLibrary = Mockito.mock(Library.class);
         Login login = Mockito.mock(Login.class);
 
-        Parser parser = new Parser(bookLibrary, movieLibrary, login);
+        ListItemView listItemView = Mockito.mock(ListItemView.class);
+        ChoiceView choiceView = Mockito.mock(ChoiceView.class);
+        Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView,listItemView);
         String input = "6";
 
-        assertEquals(CheckIn.class, parser.parseInput(input).getClass());
+        ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
+
+        assertEquals(CheckIn.class, parser.parseInput(input, viewInterface).getClass());
     }
 }

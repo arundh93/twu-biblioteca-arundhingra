@@ -18,18 +18,11 @@
 
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
-            <test name="com.twu.biblioteca.view.ViewTest"/>
-            <test name="com.twu.biblioteca.libraryitem.BookTest"/>
-            <test name="com.twu.biblioteca.model.LibraryTest"/>
-            <test name="com.twu.biblioteca.model.BibliotecaControllerTest"/>
-            <test name="com.twu.biblioteca.parser.ParserTest"/>
-            <test name="com.twu.biblioteca.menu.ListBooksTest"/>
-            <test name="com.twu.biblioteca.menu.CheckInTest"/>
-            <test name="com.twu.biblioteca.menu.CheckOutTest"/>
-            <test name="com.twu.biblioteca.menu.InvalidOptionTest"/>
-            <test name="com.twu.biblioteca.libraryitem.MovieTest"/>
-            <test name="com.twu.biblioteca.UserTest"/>
-            <test name="com.twu.biblioteca.LoginTest"/>
+            <batchtest fork="yes" todir="build">
+                <fileset dir="test">
+                    <include name="**/*Test*.java"></include>
+                </fileset>
+            </batchtest>
             <classpath>
                 <pathelement location="build"/>
                 <path refid="classpath"/>
@@ -51,6 +44,12 @@
                 <pathelement path="${java.class.path}"/>
             </classpath>
         </java>
+    </target>
+
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+        </delete>
     </target>
 
 </project>

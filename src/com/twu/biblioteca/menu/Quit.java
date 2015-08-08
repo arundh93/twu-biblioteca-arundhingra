@@ -1,11 +1,13 @@
 package com.twu.biblioteca.menu;
 
-import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.view.ViewInterface;
+
 
 public class Quit implements MenuOperation {
 
     @Override
-    public void execute(View view) {
+    public ViewInterface execute() {
         System.exit(0);
+        return null;
     }
 }

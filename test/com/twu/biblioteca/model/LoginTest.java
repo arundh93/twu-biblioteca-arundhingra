@@ -1,5 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.model.Login;
+import com.twu.biblioteca.test.Controller;
+import com.twu.biblioteca.test.User;
 import org.junit.Test;
 import org.mockito.Mockito;
 

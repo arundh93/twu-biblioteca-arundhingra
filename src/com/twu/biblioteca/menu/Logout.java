@@ -1,10 +1,11 @@
-package com.twu.biblioteca.parser;
+package com.twu.biblioteca.menu;
 
-import com.twu.biblioteca.Login;
-import com.twu.biblioteca.menu.MenuOperation;
-import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.model.Login;
+import com.twu.biblioteca.view.ViewInterface;
+
 
 public class Logout implements MenuOperation {
+
     private Login login;
 
     public Logout(Login login) {
@@ -13,7 +14,8 @@ public class Logout implements MenuOperation {
     }
 
     @Override
-    public void execute(View view) {
+    public ViewInterface execute() {
         login.logOut();
+        return null;
     }
 }

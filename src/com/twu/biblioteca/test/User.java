@@ -1,8 +1,4 @@
-package com.twu.biblioteca;
-
-import com.twu.biblioteca.libraryitem.LibraryItem;
-
-import java.util.ArrayList;
+package com.twu.biblioteca.test;
 
 public class User {
 
@@ -44,7 +40,6 @@ public class User {
 
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
         return !(userName != null ? !userName.equals(user.userName) : user.userName != null);
-
     }
 
     @Override

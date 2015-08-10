@@ -1,8 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.libraryitem.LibraryItem;
-import com.twu.biblioteca.test.User;
-
+import com.twu.biblioteca.model.User;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -22,12 +21,6 @@ public class View {
     public void displayList(ArrayList<LibraryItem> items) {
         for (LibraryItem item : items) {
                 displayOutput(item.toString());
-        }
-    }
-
-    public void displayCheckoutList (ArrayList<LibraryItem> items, ArrayList<String> ownership) {
-        for(int i = 0;i < items.size(); i++) {
-            displayOutput(items.get(i) + " " + ownership.get(i));
         }
     }
 

@@ -1,10 +1,8 @@
 package com.twu.biblioteca.entrypoint;
 
-import com.twu.biblioteca.menu.MenuOperation;
 import com.twu.biblioteca.model.Login;
-import com.twu.biblioteca.parser.Parsers;
-import com.twu.biblioteca.test.Controller;
-import com.twu.biblioteca.test.User;
+import com.twu.biblioteca.model.Controller;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.libraryitem.Book;
 import com.twu.biblioteca.libraryitem.LibraryItem;
 import com.twu.biblioteca.libraryitem.Movie;
@@ -12,7 +10,6 @@ import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.parser.Parser;
 import com.twu.biblioteca.view.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 

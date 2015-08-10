@@ -1,4 +1,4 @@
-package com.twu.biblioteca.test;
+package com.twu.biblioteca.model;
 
 import com.twu.biblioteca.view.LoginView;
 import com.twu.biblioteca.view.ViewInterface;

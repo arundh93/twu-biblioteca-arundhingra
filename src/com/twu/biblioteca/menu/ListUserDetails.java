@@ -1,6 +1,6 @@
 package com.twu.biblioteca.menu;
 
-import com.twu.biblioteca.test.User;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.view.View;
 import com.twu.biblioteca.view.ViewInterface;
 

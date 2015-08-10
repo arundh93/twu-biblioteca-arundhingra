@@ -1,7 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.Login;
-import com.twu.biblioteca.test.User;
+import com.twu.biblioteca.model.User;
 
 
 public class LoginView implements ViewInterface {

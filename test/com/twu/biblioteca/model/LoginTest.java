@@ -1,6 +1,5 @@
 package com.twu.biblioteca.model;
 
-import com.twu.biblioteca.test.User;
 import org.junit.Test;
 import java.util.ArrayList;
 

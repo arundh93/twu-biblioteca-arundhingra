@@ -26,7 +26,6 @@ public class MovieTest {
         Movie movie = new Movie("singham", "roy", 2009, 4);
 
         assertEquals(2009, movie.getYearOfRelease());
-
     }
 
     @Test

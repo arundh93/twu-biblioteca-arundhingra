@@ -20,6 +20,7 @@ public class UserView implements ViewInterface {
     @Override
     public ViewInterface render(ViewInterface viewInterface) {
         System.out.println("\n***** Main Menu *****\n" +
+                "0. Show details\n" +
                 "1. List Books\n" +
                 "2. List Movies\n" +
                 "3. Checkout Book\n" +
@@ -27,7 +28,6 @@ public class UserView implements ViewInterface {
                 "5. Checkout Movie\n" +
                 "6. Return Movie\n" +
                 "7. Quit\n" +
-                "0. Show details\n" +
                 "10. logout\n" +
                 "\n" +
                 "Enter an option (1/2/3/4/5/6/7)\n");

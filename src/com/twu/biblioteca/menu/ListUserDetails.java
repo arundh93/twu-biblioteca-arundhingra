@@ -1,23 +1,23 @@
 package com.twu.biblioteca.menu;
 
 import com.twu.biblioteca.test.User;
-import com.twu.biblioteca.view.SuccessfulView;
+import com.twu.biblioteca.view.View;
 import com.twu.biblioteca.view.ViewInterface;
 
 
 public class ListUserDetails implements MenuOperation {
     private User currentUser;
-    private SuccessfulView successfulView;
+    private View view;
 
-    public  ListUserDetails(User currentUser, SuccessfulView successfulView) {
+    public  ListUserDetails(User currentUser, View view) {
 
         this.currentUser = currentUser;
-        this.successfulView = successfulView;
+        this.view = view;
     }
 
     @Override
     public ViewInterface execute(ViewInterface viewInterface) {
-        successfulView.printUserDetails(currentUser);
+        view.printUserDetails(currentUser);
         return viewInterface;
     }
 }

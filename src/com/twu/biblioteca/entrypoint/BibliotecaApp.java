@@ -1,6 +1,5 @@
 package com.twu.biblioteca.entrypoint;
 
-import com.twu.biblioteca.menu.ListItem;
 import com.twu.biblioteca.menu.MenuOperation;
 import com.twu.biblioteca.model.Login;
 import com.twu.biblioteca.parser.Parsers;
@@ -53,28 +52,15 @@ public class BibliotecaApp {
         Library bookLibrary = new Library(availableBookList, bookCheckOutList, bookOwnership);
         Library movieLibrary = new Library(availableMovieList, movieCheckOutList, movieOwnership);
 
-        Parsers parsers = new Parsers();
-        HashMap<String, MenuOperation> userHash = new HashMap<String,MenuOperation>();
-
-
-
         View view = new View();
         Scanner scanner = new Scanner(System.in);
-        ChoiceView choiceView = new ChoiceView(scanner);
         ListItemView listItemView = new ListItemView(view);
-        Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView, listItemView);
-        InitialView initialView = new InitialView();
-
-        SuccessfulView successfulView = new SuccessfulView();
-        UnSuccessfulView unSuccessfulView = new UnSuccessfulView();
-        ViewInterface viewInterface;
-
-     //   userHash.put("1", new ListItem(bookLibrary, viewInterface, successfulView));
+        Parser parser = new Parser(bookLibrary, movieLibrary, login, view, listItemView);
 
         AdminView adminView = new AdminView(parser, view);
         UserView userView = new UserView(scanner, parser);
-        LoginView loginView = new LoginView(view, login, userView, adminView, initialView);
-        WelcomeView welcomeView = new WelcomeView(loginView);
+        LoginView loginView = new LoginView(view, login, userView, adminView);
+        WelcomeView welcomeView = new WelcomeView(loginView, view);
         Controller controller = new Controller(welcomeView, loginView);
         controller.run();
     }

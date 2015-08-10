@@ -41,5 +41,4 @@ public class ViewTest {
                 "book1                     ram                       2000                     \n" +
                 "book2                     sham                      2010                     \n", outContent.toString());
     }
-
 }

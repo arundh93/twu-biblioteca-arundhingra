@@ -1,21 +1,21 @@
 package com.twu.biblioteca.menu;
 
-import com.twu.biblioteca.view.UnSuccessfulView;
+import com.twu.biblioteca.view.View;
 import com.twu.biblioteca.view.ViewInterface;
 
 
 public class InvalidOption implements MenuOperation {
 
-    private UnSuccessfulView unSuccessfulView;
+    private View view;
 
-    public InvalidOption(UnSuccessfulView unSuccessfulView) {
+    public InvalidOption(View view) {
+        this.view = view;
 
-        this.unSuccessfulView = unSuccessfulView;
     }
 
     @Override
     public ViewInterface execute(ViewInterface viewInterface) {
-        unSuccessfulView.inValidOption();
+        view.inValidOption();
         return viewInterface;
     }
 }

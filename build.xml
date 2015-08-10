@@ -17,7 +17,7 @@
 
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
-            <batchtest fork="yes" todir="build">
+            <batchtest fork="yes" todir="out">
                 <fileset dir="test">
                     <include name="**/*Test*.java"></include>
                 </fileset>
@@ -31,7 +31,7 @@
     </target>
     <target name ="createjar" depends="runjunit">
         <jar destfile="lib/app.jar"
-             basedir="build"
+             basedir="out"
              excludes="**/Test.class"
                 />
     </target>

@@ -3,7 +3,6 @@ package com.twu.biblioteca.libraryitem;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.verify;
 
 
 public class BookTest {
@@ -28,5 +27,4 @@ public class BookTest {
 
         assertEquals(2011, book.getPublicationYear());
     }
-
 }

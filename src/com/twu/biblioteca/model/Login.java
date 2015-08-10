@@ -17,8 +17,12 @@ public class Login {
         userLogged = false;
     }
 
-    public String getCurrentUserRole() {
+    private String getCurrentUserRole() {
         return currentUser.getRole();
+    }
+
+    public boolean isCurrentUserAdmin() {
+        return getCurrentUserRole().equals("admin");
     }
 
     public String getCurrentUserName() {

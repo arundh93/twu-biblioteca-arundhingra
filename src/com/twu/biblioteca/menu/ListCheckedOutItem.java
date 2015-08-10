@@ -8,16 +8,14 @@ import com.twu.biblioteca.view.ViewInterface;
 public class ListCheckedOutItem implements MenuOperation {
     private final Library library;
     private ListItemView listItemView;
-    private ViewInterface viewInterface;
 
-    public ListCheckedOutItem(Library library, ListItemView listItemView, ViewInterface viewInterface) {
+    public ListCheckedOutItem(Library library, ListItemView listItemView) {
         this.library = library;
         this.listItemView = listItemView;
-        this.viewInterface = viewInterface;
     }
 
     @Override
-    public ViewInterface execute() {
+    public ViewInterface execute(ViewInterface viewInterface) {
         listItemView.render(library.getCheckedOutItems(), library.getOwnershipDetails());
         return viewInterface;
     }

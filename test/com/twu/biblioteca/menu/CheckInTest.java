@@ -2,7 +2,6 @@ package com.twu.biblioteca.menu;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Login;
-import com.twu.biblioteca.test.Controller;
 import com.twu.biblioteca.view.*;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -22,8 +21,8 @@ public class CheckInTest {
         Mockito.when(choiceView.execute("book")).thenReturn("prodigal daughter");
         Mockito.when(bookLibrary.returnLibraryItem("prodigal daughter", login)).thenReturn(true);
 
-        CheckIn returnABook = new CheckIn(bookLibrary, login, choiceView, successfulView, unSuccessfulView, "book", viewInterface);
-        returnABook.execute();
+        CheckIn returnABook = new CheckIn(bookLibrary, login, choiceView, successfulView, unSuccessfulView, "book");
+        returnABook.execute(viewInterface);
         Mockito.verify(successfulView).showCheckInMessage("book");
     }
 }

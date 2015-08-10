@@ -16,20 +16,18 @@ public class CheckIn implements MenuOperation {
     private SuccessfulView successfulView;
     private UnSuccessfulView unSuccessfulView;
     private String item;
-    private ViewInterface viewInterface;
 
-    public CheckIn(Library library, Login login, ChoiceView choiceView, SuccessfulView successfulView, UnSuccessfulView unSuccessfulView, String item, ViewInterface viewInterface) {
+    public CheckIn(Library library, Login login, ChoiceView choiceView, SuccessfulView successfulView, UnSuccessfulView unSuccessfulView, String item) {
         this.library = library;
         this.login = login;
         this.choiceView = choiceView;
         this.successfulView = successfulView;
         this.unSuccessfulView = unSuccessfulView;
         this.item = item;
-        this.viewInterface = viewInterface;
     }
 
     @Override
-    public ViewInterface execute() {
+    public ViewInterface execute(ViewInterface viewInterface) {
         String input = choiceView.execute(item);
         if (library.returnLibraryItem(input, login)) {
             successfulView.showCheckInMessage(item);

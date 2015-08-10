@@ -14,7 +14,7 @@ public class Logout implements MenuOperation {
     }
 
     @Override
-    public ViewInterface execute() {
+    public ViewInterface execute(ViewInterface viewInterface) {
         login.logOut();
         return null;
     }

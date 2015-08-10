@@ -1,6 +1,5 @@
 package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.test.Controller;
 import com.twu.biblioteca.menu.MenuOperation;
 import com.twu.biblioteca.parser.Parser;
 
@@ -32,8 +31,8 @@ public class AdminView implements ViewInterface {
                 "10. Logout\n\n" +
                 "Enter an option (1/2/3/4/5/6/7)");
         String input = view.takeInput();
-        menuOperation = parser.parseInput(input, this);
-        return menuOperation.execute();
+        menuOperation = parser.parseInput(input);
+        return menuOperation.execute(this);
     }
 }
 

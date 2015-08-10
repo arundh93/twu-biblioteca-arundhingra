@@ -7,7 +7,6 @@ import com.twu.biblioteca.view.ChoiceView;
 import com.twu.biblioteca.view.SuccessfulView;
 import com.twu.biblioteca.view.UnSuccessfulView;
 import com.twu.biblioteca.view.ListItemView;
-import com.twu.biblioteca.view.ViewInterface;
 import com.twu.biblioteca.menu.*;
 
 
@@ -28,32 +27,32 @@ public class Parser {
         this.listItemView = listItemView;
     }
 
-    public MenuOperation parseInput(String input, ViewInterface viewInterface) {
+    public MenuOperation parseInput(String input) {
         SuccessfulView successfulView = new SuccessfulView();
         UnSuccessfulView unSuccessfulView = new UnSuccessfulView();
         if(input.equals("1"))
-            return new ListItem(bookLibrary, viewInterface, successfulView);
+            return new ListItem(bookLibrary, successfulView);
         else if(input.equals("2"))
-            return new ListItem(movieLibrary, viewInterface, successfulView);
+            return new ListItem(movieLibrary, successfulView);
         else if (input.equals("3"))
-            return new CheckOut(bookLibrary, login, choiceView, successfulView, unSuccessfulView, "book", viewInterface);
+            return new CheckOut(bookLibrary, login, choiceView, successfulView, unSuccessfulView, "book");
         else if(input.equals("7"))
             return new Quit();
         else if(input.equals("4"))
-            return new CheckIn(bookLibrary, login, choiceView, successfulView, unSuccessfulView, "book", viewInterface);
+            return new CheckIn(bookLibrary, login, choiceView, successfulView, unSuccessfulView, "book");
         else if(input.equals("5"))
-            return new CheckOut(movieLibrary, login, choiceView, successfulView, unSuccessfulView, "movie", viewInterface);
+            return new CheckOut(movieLibrary, login, choiceView, successfulView, unSuccessfulView, "movie");
         else if (input.equals("6"))
-            return new CheckIn(movieLibrary, login, choiceView, successfulView, unSuccessfulView, "movie", viewInterface);
-        else if (input.equals("8") && login.getCurrentUserRole().equals("admin"))
-            return new ListCheckedOutItem(bookLibrary, listItemView, viewInterface);
-        else if (input.equals("9") && login.getCurrentUserRole().equals("admin"))
-            return new ListCheckedOutItem(movieLibrary, listItemView, viewInterface);
-        else if (input.equals("0") && login.getCurrentUserRole().equals("user"))
-            return new ListUserDetails(login.getCurrentUser(), viewInterface, successfulView);
+            return new CheckIn(movieLibrary, login, choiceView, successfulView, unSuccessfulView, "movie");
+        else if (input.equals("8") && login.isCurrentUserAdmin())
+            return new ListCheckedOutItem(bookLibrary, listItemView);
+        else if (input.equals("9") && login.isCurrentUserAdmin())
+            return new ListCheckedOutItem(movieLibrary, listItemView);
+        else if (input.equals("0") && !login.isCurrentUserAdmin())
+            return new ListUserDetails(login.getCurrentUser(), successfulView);
         else if (input.equals("10"))
             return new Logout(login);
         else
-        return new InvalidOption(viewInterface, unSuccessfulView);
+        return new InvalidOption(unSuccessfulView);
     }
 }

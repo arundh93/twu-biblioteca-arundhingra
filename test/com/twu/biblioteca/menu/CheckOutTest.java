@@ -1,7 +1,5 @@
 package com.twu.biblioteca.menu;
 
-
-import com.twu.biblioteca.libraryitem.Book;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Login;
 import com.twu.biblioteca.view.ChoiceView;
@@ -11,7 +9,6 @@ import com.twu.biblioteca.view.ViewInterface;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import java.util.ArrayList;
 
 public class CheckOutTest {
 
@@ -28,8 +25,8 @@ public class CheckOutTest {
         Mockito.when(choiceView.execute("book")).thenReturn("prodigal daughter");
         Mockito.when(bookLibrary.checkOutLibraryItem("prodigal daughter", login)).thenReturn(true);
 
-        CheckOut checkOutABook = new CheckOut(bookLibrary, login, choiceView, successfulView, unSuccessfulView, "book", viewInterface);
-        checkOutABook.execute();
+        CheckOut checkOutABook = new CheckOut(bookLibrary, login, choiceView, successfulView, unSuccessfulView, "book");
+        checkOutABook.execute(viewInterface);
         Mockito.verify(successfulView).showCheckOutMessage("book");
     }
 }

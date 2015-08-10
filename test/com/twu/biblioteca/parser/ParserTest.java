@@ -23,7 +23,7 @@ public class ParserTest {
         String input = "1";
 
         ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
-        assertEquals(ListItem.class, parser.parseInput(input, viewInterface).getClass());
+        assertEquals(ListItem.class, parser.parseInput(input).getClass());
     }
 
     @Test
@@ -39,7 +39,7 @@ public class ParserTest {
 
         ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
 
-        assertEquals(ListItem.class, parser.parseInput(input, viewInterface).getClass());
+        assertEquals(ListItem.class, parser.parseInput(input).getClass());
     }
 
     @Test
@@ -55,7 +55,7 @@ public class ParserTest {
 
         ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
 
-        assertEquals(Quit.class, parser.parseInput(input, viewInterface).getClass());
+        assertEquals(Quit.class, parser.parseInput(input).getClass());
     }
 
     @Test
@@ -71,7 +71,7 @@ public class ParserTest {
 
         ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
 
-        assertEquals(CheckOut.class, parser.parseInput(input, viewInterface).getClass());
+        assertEquals(CheckOut.class, parser.parseInput(input).getClass());
     }
 
     @Test
@@ -87,7 +87,7 @@ public class ParserTest {
 
         ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
 
-        assertEquals(CheckIn.class, parser.parseInput(input, viewInterface).getClass());
+        assertEquals(CheckIn.class, parser.parseInput(input).getClass());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class ParserTest {
         String input = "5";
 
 
-        assertEquals(CheckOut.class, parser.parseInput(input, viewInterface).getClass());
+        assertEquals(CheckOut.class, parser.parseInput(input).getClass());
     }
 
     @Test
@@ -118,8 +118,6 @@ public class ParserTest {
         Parser parser = new Parser(bookLibrary, movieLibrary, login, choiceView,listItemView);
         String input = "6";
 
-        ViewInterface viewInterface = Mockito.mock(ViewInterface.class);
-
-        assertEquals(CheckIn.class, parser.parseInput(input, viewInterface).getClass());
+        assertEquals(CheckIn.class, parser.parseInput(input).getClass());
     }
 }

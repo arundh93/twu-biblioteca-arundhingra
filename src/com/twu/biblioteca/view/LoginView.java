@@ -31,8 +31,7 @@ public class LoginView implements ViewInterface {
             password = view.takeInput();
         }
         while (!login.setCurrentUser(username, password));
-        user = login.getCurrentUser();
-        if(user.getRole().equals("admin"))
+        if(login.isCurrentUserAdmin())
             return adminView;
         else
             return userView;

@@ -16,19 +16,17 @@ public class CheckOut implements MenuOperation {
     private final SuccessfulView successfulView;
     private final UnSuccessfulView unSuccessfulView;
     private final String item;
-    private ViewInterface viewInterface;
 
-    public CheckOut(Library library, Login login, ChoiceView choiceView, SuccessfulView successfulView, UnSuccessfulView unSuccessfulView, String item, ViewInterface viewInterface) {
+    public CheckOut(Library library, Login login, ChoiceView choiceView, SuccessfulView successfulView, UnSuccessfulView unSuccessfulView, String item) {
         this.library = library;
         this.login = login;
         this.choiceView = choiceView;
         this.successfulView = successfulView;
         this.unSuccessfulView = unSuccessfulView;
         this.item = item;
-        this.viewInterface = viewInterface;
     }
 
-    public ViewInterface execute() {
+    public ViewInterface execute(ViewInterface viewInterface) {
         String input = choiceView.execute(item);
         if (library.checkOutLibraryItem(input, login)) {
             successfulView.showCheckOutMessage(item);

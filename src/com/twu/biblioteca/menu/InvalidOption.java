@@ -6,17 +6,15 @@ import com.twu.biblioteca.view.ViewInterface;
 
 public class InvalidOption implements MenuOperation {
 
-    private ViewInterface viewInterface;
     private UnSuccessfulView unSuccessfulView;
 
-    public InvalidOption(ViewInterface viewInterface, UnSuccessfulView unSuccessfulView) {
+    public InvalidOption(UnSuccessfulView unSuccessfulView) {
 
-        this.viewInterface = viewInterface;
         this.unSuccessfulView = unSuccessfulView;
     }
 
     @Override
-    public ViewInterface execute() {
+    public ViewInterface execute(ViewInterface viewInterface) {
         unSuccessfulView.inValidOption();
         return viewInterface;
     }

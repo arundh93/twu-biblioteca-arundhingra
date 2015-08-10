@@ -4,5 +4,5 @@ import com.twu.biblioteca.view.ViewInterface;
 
 
 public interface MenuOperation {
-    ViewInterface execute();
+    ViewInterface execute(ViewInterface viewInterface);
 }

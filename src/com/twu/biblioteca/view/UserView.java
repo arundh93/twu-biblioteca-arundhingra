@@ -32,7 +32,7 @@ public class UserView implements ViewInterface {
                 "\n" +
                 "Enter an option (1/2/3/4/5/6/7)\n");
         String input = scanner.nextLine();
-        menuOperation = parser.parseInput(input, this);
-        return menuOperation.execute();
+        menuOperation = parser.parseInput(input);
+        return menuOperation.execute(this);
     }
 }

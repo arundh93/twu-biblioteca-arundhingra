@@ -995,12 +995,12 @@
       <workItem from="1438406246965" duration="18602000" />
       <workItem from="1438540444621" duration="21828000" />
       <workItem from="1438698556442" duration="54388000" />
-      <workItem from="1438957043676" duration="31576000" />
+      <workItem from="1438957043676" duration="31737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224141000" />
+    <option name="totallyTimeSpent" value="224302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="940" extended-state="6" />
@@ -1226,7 +1226,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1302,7 +1302,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>

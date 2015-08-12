@@ -30,5 +30,43 @@ DONE !
 
 Description
 ===========
-Biblioteca is a library management system
+Biblioteca is a library management system.
 
+
+Usage
+=====
+1.ant compile(for compiling the project)
+2.ant run(for running the project)
+
+
+Setup
+=====
+You need to install Java 1.7 (java 7) and Ant to use the application.<br>
+Ant is needed for building the jar from the command line.
+
+
+Options Available(Admin)
+========================
+1. List Books
+2. List Movies
+3. Checkout Book
+4. Return  book
+5. Checkout Movie
+6. Return Movie
+7. Quit
+8. List checked out book
+9. List Checked out movie
+10. Logout
+
+
+Options Available(User)
+=======================
+0. Show details
+1. List Books
+2. List Movies
+3. Checkout Book
+4. Return book
+5. Checkout Movie
+6. Return Movie
+7. Quit
+10. logout
